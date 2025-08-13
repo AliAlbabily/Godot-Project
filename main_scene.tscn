@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3huq2i6ocse5"]
+
+[ext_resource type="Texture2D" uid="uid://dyx58ny1mh0pr" path="res://images/b-o-w-qin-mansion-hall-render-01j.jpg" id="1_8mm7a"]
+[ext_resource type="PackedScene" uid="uid://di85w5pvhsfd7" path="res://scenes/character.tscn" id="2_hq1ik"]
+[ext_resource type="PackedScene" uid="uid://8c68dq5m66fh" path="res://scenes/glitchy_bg.tscn" id="4_66tet"]
+[ext_resource type="AudioStream" uid="uid://0r00niqw68ah" path="res://audio/new_skill.mp3" id="5_7ycvg"]
+[ext_resource type="Script" uid="uid://obg86kpk8gpl" path="res://save_and_load.gd" id="5_8mm7a"]
+[ext_resource type="Script" uid="uid://qtll57aaynm3" path="res://scenes/button.gd" id="6_hq1ik"]
+
+[node name="MainScene" type="Node"]
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(644.839, 364.499)
+scale = Vector2(0.671712, 0.675002)
+texture = ExtResource("1_8mm7a")
+metadata/_edit_lock_ = true
+
+[node name="CharacterNode" parent="Background" instance=ExtResource("2_hq1ik")]
+position = Vector2(744.607, 231.853)
+
+[node name="Animated_Background" parent="." instance=ExtResource("4_66tet")]
+visible = false
+
+[node name="NewSkillSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7ycvg")
+volume_db = -5.0
+
+[node name="Save_and_Load" type="Node2D" parent="."]
+script = ExtResource("5_8mm7a")
+
+[node name="Button" type="Button" parent="Save_and_Load"]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 99.0
+text = "Click Me"
+script = ExtResource("6_hq1ik")
+metadata/_edit_lock_ = true
+
+[node name="Save" type="Button" parent="Save_and_Load"]
+offset_left = 265.0
+offset_top = 4.0
+offset_right = 359.0
+offset_bottom = 98.0
+text = "Save"
+metadata/_edit_lock_ = true
+
+[node name="Load" type="Button" parent="Save_and_Load"]
+offset_left = 374.0
+offset_top = 4.0
+offset_right = 472.0
+offset_bottom = 102.0
+text = "Load"
+metadata/_edit_lock_ = true
+
+[node name="Counter_Result" type="Button" parent="Save_and_Load"]
+offset_left = 124.0
+offset_top = 2.0
+offset_right = 220.0
+offset_bottom = 98.0
+text = "Counter Result"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Save_and_Load/Button" to="Save_and_Load" method="_on_button_pressed"]
+[connection signal="pressed" from="Save_and_Load/Save" to="Save_and_Load" method="_on_save_pressed"]
+[connection signal="pressed" from="Save_and_Load/Load" to="Save_and_Load" method="_on_load_pressed"]
+[connection signal="pressed" from="Save_and_Load/Counter_Result" to="Save_and_Load" method="_on_counter_result_pressed"]
