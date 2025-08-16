@@ -20,13 +20,6 @@ metadata/_edit_lock_ = true
 [node name="CharacterNode" parent="Background" instance=ExtResource("2_hq1ik")]
 position = Vector2(744.607, 231.853)
 
-[node name="Animated_Background" parent="." instance=ExtResource("4_66tet")]
-visible = false
-
-[node name="NewSkillSoundEffect" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_7ycvg")
-volume_db = -5.0
-
 [node name="Save_and_Load" type="Node2D" parent="."]
 script = ExtResource("5_8mm7a")
 
@@ -62,6 +55,13 @@ offset_right = 220.0
 offset_bottom = 98.0
 text = "Counter Result"
 metadata/_edit_lock_ = true
+
+[node name="Animated_Background" parent="." instance=ExtResource("4_66tet")]
+visible = false
+
+[node name="NewSkillSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7ycvg")
+volume_db = -5.0
 
 [node name="MainMenu" parent="." instance=ExtResource("7_nfk4m")]
 visible = false

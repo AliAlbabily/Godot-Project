@@ -119,6 +119,8 @@ metadata/_edit_lock_ = true
 [node name="Label" type="Label" parent="."]
 offset_right = 1066.0
 offset_bottom = 235.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
 theme_override_fonts/font = ExtResource("26_o03ms")
 theme_override_font_sizes/font_size = 56
 text = "Build Acquired
