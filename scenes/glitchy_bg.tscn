@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://8c68dq5m66fh"]
+[gd_scene load_steps=28 format=3 uid="uid://8c68dq5m66fh"]
 
 [ext_resource type="Script" uid="uid://lbksovdufgke" path="res://scenes/glitchy_bg.gd" id="1_afhc2"]
 [ext_resource type="Texture2D" uid="uid://dakxiyr6tbffk" path="res://assets/glitchy_bg_frames/frame_00_delay-0.04s.png" id="1_ydon7"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bufh5xn5radqh" path="res://assets/glitchy_bg_frames/frame_21_delay-0.04s.png" id="22_rh1wb"]
 [ext_resource type="Texture2D" uid="uid://dhtufcx5p5s2k" path="res://assets/glitchy_bg_frames/frame_22_delay-0.04s.png" id="23_72k6h"]
 [ext_resource type="Texture2D" uid="uid://cl67y0bhwika3" path="res://assets/glitchy_bg_frames/frame_23_delay-0.04s.png" id="24_kjrvh"]
+[ext_resource type="FontFile" uid="uid://bwhbp6jee5lcd" path="res://fonts/Moria_DF.TTF" id="26_o03ms"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aqpwb"]
 animations = [{
@@ -118,7 +119,8 @@ metadata/_edit_lock_ = true
 [node name="Label" type="Label" parent="."]
 offset_right = 1066.0
 offset_bottom = 235.0
-theme_override_font_sizes/font_size = 85
+theme_override_fonts/font = ExtResource("26_o03ms")
+theme_override_font_sizes/font_size = 56
 text = "Build Acquired
 Replica of the Dark Knight"
 horizontal_alignment = 1

@@ -64,6 +64,8 @@ text = "Counter Result"
 metadata/_edit_lock_ = true
 
 [node name="MainMenu" parent="." instance=ExtResource("7_nfk4m")]
+visible = false
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Save_and_Load/Button" to="Save_and_Load" method="_on_button_pressed"]
 [connection signal="pressed" from="Save_and_Load/Save" to="Save_and_Load" method="_on_save_pressed"]
