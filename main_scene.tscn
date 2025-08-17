@@ -1,14 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://b3huq2i6ocse5"]
 
 [ext_resource type="Texture2D" uid="uid://dyx58ny1mh0pr" path="res://images/b-o-w-qin-mansion-hall-render-01j.jpg" id="1_8mm7a"]
+[ext_resource type="Script" uid="uid://ckoc2uijsgj75" path="res://scenes/main_scene.gd" id="1_66tet"]
 [ext_resource type="PackedScene" uid="uid://di85w5pvhsfd7" path="res://scenes/character.tscn" id="2_hq1ik"]
 [ext_resource type="PackedScene" uid="uid://8c68dq5m66fh" path="res://scenes/glitchy_bg.tscn" id="4_66tet"]
 [ext_resource type="AudioStream" uid="uid://0r00niqw68ah" path="res://audio/new_skill.mp3" id="5_7ycvg"]
 [ext_resource type="Script" uid="uid://obg86kpk8gpl" path="res://save_and_load.gd" id="5_8mm7a"]
 [ext_resource type="Script" uid="uid://qtll57aaynm3" path="res://scenes/button.gd" id="6_hq1ik"]
-[ext_resource type="PackedScene" uid="uid://bbmff404ggn6b" path="res://scenes/main_menu.tscn" id="7_nfk4m"]
 
 [node name="Main_Testing" type="Node"]
+script = ExtResource("1_66tet")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -62,10 +63,6 @@ visible = false
 [node name="NewSkillSoundEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7ycvg")
 volume_db = -5.0
-
-[node name="MainMenu" parent="." instance=ExtResource("7_nfk4m")]
-visible = false
-metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Save_and_Load/Button" to="Save_and_Load" method="_on_button_pressed"]
 [connection signal="pressed" from="Save_and_Load/Save" to="Save_and_Load" method="_on_save_pressed"]
