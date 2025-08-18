@@ -1,9 +1,12 @@
 extends Control
 
+@onready var main_menu_music: AudioStreamPlayer = $MainMenuMusic
+
 func _ready() -> void:
 	print("Main_Menu scene ready")
 	queue_redraw()
 	resized.connect(func(): queue_redraw())  # redraw when the node is resized
+	main_menu_music.play()
 	
 func _exit_tree() -> void:
 	print("Main_Menu scene freed")
