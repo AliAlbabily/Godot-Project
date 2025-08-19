@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbmff404ggn6b"]
+[gd_scene load_steps=9 format=3 uid="uid://bbmff404ggn6b"]
 
 [ext_resource type="Script" uid="uid://cthhepdyacts0" path="res://scenes/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://ciqylw6qf4s2u" path="res://images/logo.png" id="2_ekxnf"]
@@ -32,6 +32,9 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -128,7 +131,21 @@ metadata/_edit_lock_ = true
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_bqqt6")
 
+[node name="ToggleMusicTrack" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ToggleMusicTrack" to="." method="_on_toggle_music_track_pressed"]
