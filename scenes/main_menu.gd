@@ -19,7 +19,7 @@ func _exit_tree() -> void:
 	print("Main_Menu scene freed")
 
 func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO, size), Color.WHITE, true)
+	draw_rect(Rect2(Vector2.ZERO, size), Color.BLACK, true)
 
 func _process(delta):
 	pass
