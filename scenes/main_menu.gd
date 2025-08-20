@@ -15,6 +15,9 @@ func _ready() -> void:
 	toggle_music_track.icon = music_on_icon
 	main_menu_music.play()
 	
+	# Start the animation
+	$AnimatedSprite2D.play()
+	
 func _exit_tree() -> void:
 	print("Main_Menu scene freed")
 
