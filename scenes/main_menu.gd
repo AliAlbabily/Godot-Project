@@ -79,7 +79,7 @@ func _process(delta):
 	pass
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://main_scene.tscn")
+	go_to_next_scene()
 
 func _on_continue_pressed() -> void:
 	print("continue")
@@ -100,4 +100,11 @@ func _on_toggle_music_track_pressed() -> void:
 		main_menu_music.stream_paused = true   # ⏸ pause
 		toggle_music_track.icon = music_off_icon
 		
+func play_fade_out_animation():
+	$FadeLayer/ColorRect.mouse_filter = Control.MOUSE_FILTER_STOP # disable mouse clicks
+	$FadeLayer/fade_out.play("fade_out")
+	await $FadeLayer/fade_out.animation_finished
 		
+func go_to_next_scene():
+	await play_fade_out_animation()
+	get_tree().change_scene_to_file("res://main_scene.tscn")
