@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://gutl1uw80tyh"]
+
+[ext_resource type="Texture2D" uid="uid://drbqt2ouydoen" path="res://images/battle-stage.png" id="1_6cgca"]
+[ext_resource type="Texture2D" uid="uid://7johx0ys72cs" path="res://images/warrior.png" id="2_0s860"]
+
+[node name="BattlePrototype" type="Node2D"]
+
+[node name="Battle-stage" type="Sprite2D" parent="."]
+position = Vector2(638, 441)
+scale = Vector2(0.921875, 0.921875)
+texture = ExtResource("1_6cgca")
+metadata/_edit_lock_ = true
+
+[node name="Warrior" type="Sprite2D" parent="."]
+position = Vector2(1020, 386)
+scale = Vector2(0.334961, 0.334961)
+texture = ExtResource("2_0s860")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 453.0
+offset_top = 625.0
+offset_right = 574.0
+offset_bottom = 691.0
+text = "ATTACK"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 595.0
+offset_top = 625.0
+offset_right = 716.0
+offset_bottom = 691.0
+text = "DEFENCE"
