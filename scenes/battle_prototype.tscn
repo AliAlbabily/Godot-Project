@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://gutl1uw80tyh"]
+[gd_scene load_steps=4 format=3 uid="uid://gutl1uw80tyh"]
 
 [ext_resource type="Texture2D" uid="uid://drbqt2ouydoen" path="res://images/battle-stage.png" id="1_6cgca"]
 [ext_resource type="Texture2D" uid="uid://7johx0ys72cs" path="res://images/warrior.png" id="2_0s860"]
+[ext_resource type="Script" uid="uid://bq322hnxonaxc" path="res://scenes/player_actions.gd" id="3_vcnw4"]
 
 [node name="BattlePrototype" type="Node2D"]
 
@@ -17,16 +18,24 @@ scale = Vector2(0.334961, 0.334961)
 texture = ExtResource("2_0s860")
 metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="."]
+[node name="PlayerActions" type="Node2D" parent="."]
+script = ExtResource("3_vcnw4")
+
+[node name="Attack" type="Button" parent="PlayerActions"]
 offset_left = 453.0
 offset_top = 625.0
 offset_right = 574.0
 offset_bottom = 691.0
 text = "ATTACK"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Defence" type="Button" parent="PlayerActions"]
 offset_left = 595.0
 offset_top = 625.0
 offset_right = 716.0
 offset_bottom = 691.0
 text = "DEFENCE"
+
+[connection signal="mouse_entered" from="PlayerActions/Attack" to="PlayerActions" method="_on_attack_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerActions/Attack" to="PlayerActions" method="_on_attack_mouse_exited"]
+[connection signal="mouse_entered" from="PlayerActions/Defence" to="PlayerActions" method="_on_defence_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerActions/Defence" to="PlayerActions" method="_on_defence_mouse_exited"]
