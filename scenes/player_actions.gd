@@ -2,6 +2,7 @@ extends Node2D
 
 var currentActionStatus : String = ""
 var generation : int = 0  # keeps track of the "latest" call
+@onready var shield_animations: AnimationPlayer = $"../Shield-cropped/shield_animations"
 
 func switch_status(status: String = ""):
 	if currentActionStatus == status:
@@ -26,6 +27,7 @@ func _on_attack_mouse_entered() -> void:
 
 func _on_defence_mouse_entered() -> void:
 	switch_status("defence-enabled")
+	shield_animations.play("slide_in")
 
 
 func _on_attack_mouse_exited() -> void:
@@ -34,3 +36,4 @@ func _on_attack_mouse_exited() -> void:
 
 func _on_defence_mouse_exited() -> void:
 	switch_status("defence-disabled")
+	shield_animations.play("slide_out")
