@@ -1,26 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://gutl1uw80tyh"]
+[gd_scene load_steps=13 format=3 uid="uid://gutl1uw80tyh"]
 
 [ext_resource type="Texture2D" uid="uid://drbqt2ouydoen" path="res://images/battle-stage.png" id="1_6cgca"]
 [ext_resource type="Texture2D" uid="uid://7johx0ys72cs" path="res://images/warrior.png" id="2_0s860"]
 [ext_resource type="Script" uid="uid://bq322hnxonaxc" path="res://scenes/player_actions.gd" id="3_vcnw4"]
 [ext_resource type="Texture2D" uid="uid://cb8alcoyeewrf" path="res://images/shield-cropped.png" id="4_vwesj"]
 [ext_resource type="Texture2D" uid="uid://dd6tnr6mrbmgi" path="res://images/sword-cropped.png" id="5_e4dlj"]
-
-[sub_resource type="Animation" id="Animation_e4dlj"]
-resource_name = "slide_in"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-178, 537), Vector2(147, 537)]
-}
 
 [sub_resource type="Animation" id="Animation_cyiub"]
 length = 1.5
@@ -37,9 +21,9 @@ tracks/0/keys = {
 "values": [Vector2(-178, 537)]
 }
 
-[sub_resource type="Animation" id="Animation_bwcvr"]
-resource_name = "slide_out"
-length = 1.5
+[sub_resource type="Animation" id="Animation_e4dlj"]
+resource_name = "slide_in"
+length = 0.75
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -47,7 +31,23 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-178, 537), Vector2(147, 537)]
+}
+
+[sub_resource type="Animation" id="Animation_bwcvr"]
+resource_name = "slide_out"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(147, 537), Vector2(-178, 537)]
@@ -58,6 +58,43 @@ _data = {
 &"RESET": SubResource("Animation_cyiub"),
 &"slide_in": SubResource("Animation_e4dlj"),
 &"slide_out": SubResource("Animation_bwcvr")
+}
+
+[sub_resource type="Animation" id="Animation_b5d7x"]
+resource_name = "slide_in"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-184, 441), Vector2(172, 441)]
+}
+
+[sub_resource type="Animation" id="Animation_a5gbd"]
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-184, 441)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khbdf"]
+_data = {
+&"RESET": SubResource("Animation_a5gbd"),
+&"slide_in": SubResource("Animation_b5d7x")
 }
 
 [node name="BattlePrototype" type="Node2D"]
@@ -100,10 +137,25 @@ libraries = {
 &"": SubResource("AnimationLibrary_b5d7x")
 }
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Shield-cropped"]
+position = Vector2(4.24683, -15.2405)
+scale = Vector2(144.817, 173.096)
+metadata/_edit_lock_ = true
+
 [node name="Sword-cropped" type="Sprite2D" parent="."]
-position = Vector2(-232, 441)
+position = Vector2(-184, 441)
 scale = Vector2(0.148341, 0.148341)
 texture = ExtResource("5_e4dlj")
+
+[node name="sword_animations" type="AnimationPlayer" parent="Sword-cropped"]
+libraries = {
+&"": SubResource("AnimationLibrary_khbdf")
+}
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Sword-cropped"]
+position = Vector2(6.10352e-05, -16.853)
+scale = Vector2(97.7477, 196.507)
+metadata/_edit_lock_ = true
 
 [connection signal="mouse_entered" from="PlayerActions/Attack" to="PlayerActions" method="_on_attack_mouse_entered"]
 [connection signal="mouse_exited" from="PlayerActions/Attack" to="PlayerActions" method="_on_attack_mouse_exited"]

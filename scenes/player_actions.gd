@@ -1,39 +1,53 @@
 extends Node2D
 
-var currentActionStatus : String = ""
-var generation : int = 0  # keeps track of the "latest" call
 @onready var shield_animations: AnimationPlayer = $"../Shield-cropped/shield_animations"
+@onready var sword_animations: AnimationPlayer = $"../Sword-cropped/sword_animations"
+@onready var shield_cropped: Sprite2D = $"../Shield-cropped"
+@onready var sword_cropped: Sprite2D = $"../Sword-cropped"
 
-func switch_status(status: String = ""):
-	if currentActionStatus == status:
-		return
+var objects: Array = []
 
-	currentActionStatus = status
-	generation += 1  # bump generation whenever status changes
-	_delayed_print(status, generation)
-
-
-func _delayed_print(status: String, my_generation: int) -> void:
-	await get_tree().create_timer(1.5).timeout
-
-	# Only print if this is still the latest generation
-	if my_generation == generation and currentActionStatus == status:
-		print("Status (after 1.5s): ", status)
+		
+func _ready():
+	objects = [shield_cropped, sword_cropped]
+	print(shield_cropped)
+	print(sword_cropped)
+	
+func is_sprite_visible(sprite: Sprite2D) -> bool:
+	if not sprite:
+		return false
+	var notifier: VisibleOnScreenNotifier2D = sprite.get_node_or_null("VisibleOnScreenNotifier2D")
+	if notifier and notifier.is_on_screen():
+		return true
+	return false
 
 
 func _on_attack_mouse_entered() -> void:
-	switch_status("attack-enabled")
-
+	for obj in objects:
+		#TODO: ################
+		if (obj == sword_cropped):
+			if is_sprite_visible(obj):
+				print(obj, " is visible on the field") # replace with a "return" later
+			else:
+				print(obj, " is off screen")
+				sword_animations.play("slide_in")
+	
 
 func _on_defence_mouse_entered() -> void:
-	switch_status("defence-enabled")
-	shield_animations.play("slide_in")
+	for obj in objects:
+		#TODO: ################
+		if (obj == shield_cropped):
+			if is_sprite_visible(obj):
+				print(obj, " is visible on the field") # replace with a "return" later
+			else:
+				print(obj, " is off screen")
+				shield_animations.play("slide_in")
 
 
 func _on_attack_mouse_exited() -> void:
-	switch_status("attack-disabled")
+	pass
 
 
 func _on_defence_mouse_exited() -> void:
-	switch_status("defence-disabled")
-	shield_animations.play("slide_out")
+	#shield_animations.play("slide_out")
+	pass
