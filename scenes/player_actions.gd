@@ -24,30 +24,43 @@ func is_sprite_visible(sprite: Sprite2D) -> bool:
 
 func _on_attack_mouse_entered() -> void:
 	for obj in objects:
-		#TODO: ################
 		if (obj == sword_cropped):
+			obj.visible = true
 			if is_sprite_visible(obj):
+				#TODO
 				print(obj, " is visible on the field") # replace with a "return" later
 			else:
 				print(obj, " is off screen")
 				sword_animations.play("slide_in")
+		else:
+			obj.visible = false
 	
 
 func _on_defence_mouse_entered() -> void:
 	for obj in objects:
-		#TODO: ################
 		if (obj == shield_cropped):
+			obj.visible = true
 			if is_sprite_visible(obj):
+				#TODO:
 				print(obj, " is visible on the field") # replace with a "return" later
 			else:
 				print(obj, " is off screen")
 				shield_animations.play("slide_in")
+		else:
+			obj.visible = false
 
 
 func _on_attack_mouse_exited() -> void:
-	pass
+	for obj in objects:
+		if (obj == sword_cropped):
+			if is_sprite_visible(obj):
+				pass
+				sword_animations.play("slide_out")
 
 
 func _on_defence_mouse_exited() -> void:
-	#shield_animations.play("slide_out")
-	pass
+	for obj in objects:
+		if (obj == shield_cropped):
+			if is_sprite_visible(obj):
+				pass
+				shield_animations.play("slide_out")
