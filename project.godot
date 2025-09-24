@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameDemoGithub"
-run/main_scene="uid://bbmff404ggn6b"
+run/main_scene="uid://gutl1uw80tyh"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [rendering]

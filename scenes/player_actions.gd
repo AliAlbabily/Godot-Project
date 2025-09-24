@@ -7,11 +7,26 @@ extends Node2D
 
 var objects: Array = []
 
+var latest_action : Sprite2D = null
+
+@onready var actions_starting_x_positions = {
+	shield_cropped: shield_cropped.position.x,
+	sword_cropped: sword_cropped.position.x,
+}
+
 		
 func _ready():
 	objects = [shield_cropped, sword_cropped]
-	print(shield_cropped)
-	print(sword_cropped)
+	
+	#TODO:
+	print("shield:", actions_starting_x_positions[shield_cropped])
+	print("sword:", actions_starting_x_positions[sword_cropped])
+	
+
+func switch_status(previous_action_object: Sprite2D, previous_action: String):
+	await get_tree().create_timer(0.50).timeout
+	previous_action_object.play(previous_action)
+	
 	
 func is_sprite_visible(sprite: Sprite2D) -> bool:
 	if not sprite:
@@ -23,44 +38,24 @@ func is_sprite_visible(sprite: Sprite2D) -> bool:
 
 
 func _on_attack_mouse_entered() -> void:
-	for obj in objects:
-		if (obj == sword_cropped):
-			obj.visible = true
-			if is_sprite_visible(obj):
-				#TODO
-				print(obj, " is visible on the field") # replace with a "return" later
-			else:
-				print(obj, " is off screen")
-				sword_animations.play("slide_in")
-		else:
-			obj.visible = false
+	if sword_animations.current_animation != "slide_in":
+		sword_animations.play("slide_in", 0.1)
 	
 
 func _on_defence_mouse_entered() -> void:
-	for obj in objects:
-		if (obj == shield_cropped):
-			obj.visible = true
-			if is_sprite_visible(obj):
-				#TODO:
-				print(obj, " is visible on the field") # replace with a "return" later
-			else:
-				print(obj, " is off screen")
-				shield_animations.play("slide_in")
-		else:
-			obj.visible = false
+	if shield_animations.current_animation != "slide_in":
+		shield_animations.play("slide_in", 0.1)
 
-
+	
 func _on_attack_mouse_exited() -> void:
-	for obj in objects:
-		if (obj == sword_cropped):
-			if is_sprite_visible(obj):
-				pass
-				sword_animations.play("slide_out")
+	if sword_animations.current_animation != "slide_out":
+		sword_animations.play("slide_out", 0.1)
 
 
 func _on_defence_mouse_exited() -> void:
-	for obj in objects:
-		if (obj == shield_cropped):
-			if is_sprite_visible(obj):
-				pass
-				shield_animations.play("slide_out")
+	if shield_animations.current_animation != "slide_out":
+		shield_animations.play("slide_out", 0.1)
+
+
+# how to set new position
+#shield_cropped.position = Vector2(147, shield_cropped.position.y)
