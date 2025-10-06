@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcg0ahwv5ytn2"
-path="res://.godot/imported/warrior.png-5a991f2b5a4c70e0a23d758896248915.ctex"
+uid="uid://cghr181t2uujb"
+path="res://.godot/imported/castle-corridor.jpg-1402945d5bd60aeaee2d818ddd428367.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/warrior.png"
-dest_files=["res://.godot/imported/warrior.png-5a991f2b5a4c70e0a23d758896248915.ctex"]
+source_file="res://images/castle-corridor.jpg"
+dest_files=["res://.godot/imported/castle-corridor.jpg-1402945d5bd60aeaee2d818ddd428367.ctex"]
 
 [params]
 

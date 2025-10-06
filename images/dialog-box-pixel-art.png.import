@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcg0ahwv5ytn2"
-path="res://.godot/imported/warrior.png-5a991f2b5a4c70e0a23d758896248915.ctex"
+uid="uid://dw5qnjpspgyra"
+path="res://.godot/imported/dialog-box-pixel-art.png-b6563fd8851758787c4e3192230e9190.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/warrior.png"
-dest_files=["res://.godot/imported/warrior.png-5a991f2b5a4c70e0a23d758896248915.ctex"]
+source_file="res://images/dialog-box-pixel-art.png"
+dest_files=["res://.godot/imported/dialog-box-pixel-art.png-b6563fd8851758787c4e3192230e9190.ctex"]
 
 [params]
 
