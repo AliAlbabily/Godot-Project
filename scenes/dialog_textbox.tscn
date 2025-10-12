@@ -1,10 +1,35 @@
 [gd_scene load_steps=2 format=3 uid="uid://s13eh812jvlv"]
 
-[ext_resource type="Texture2D" uid="uid://dw5qnjpspgyra" path="res://images/dialog-box-pixel-art.png" id="1_twnas"]
+[ext_resource type="Texture2D" uid="uid://olqpwebrv0ot" path="res://images/pixelated-textbox.png" id="1_twnas"]
 
 [node name="Dialogue" type="CanvasLayer"]
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_right = 114.0
-offset_bottom = 40.0
+offset_right = 402.0
+offset_bottom = 173.0
 texture = ExtResource("1_twnas")
+region_rect = Rect2(33.9638, 39.063, 569.648, 158.945)
+metadata/_edit_lock_ = true
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 97.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Name"
+metadata/_edit_lock_ = true
+
+[node name="Chat" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 376.0
+offset_bottom = 144.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Chat...
+Chat...
+Chat...
+Chat..."
+metadata/_edit_lock_ = true
