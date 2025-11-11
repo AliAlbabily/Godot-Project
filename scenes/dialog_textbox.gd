@@ -7,7 +7,6 @@ var d_active = false
 
 func _ready():
 	$NinePatchRect.visible = false
-	start()
 	
 func start():
 	if d_active:
