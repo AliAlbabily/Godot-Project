@@ -38,3 +38,4 @@ grow_vertical = 0
 metadata/_edit_lock_ = true
 
 [connection signal="input_event" from="MysteriousMan" to="." method="_on_mysterious_man_input_event"]
+[connection signal="dialogue_finished" from="CanvasLayer/Dialogue" to="." method="_on_dialogue_dialogue_finished"]

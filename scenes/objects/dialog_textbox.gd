@@ -1,5 +1,7 @@
 extends Node
 
+signal dialogue_finished
+
 @export_file("*.json") var d_file # to access a json file
 var dialogue = []
 var current_dialogue_id = 0
@@ -38,6 +40,7 @@ func next_script():
 	if current_dialogue_id >= len(dialogue):
 		d_active = false
 		$NinePatchRect.visible = false
+		emit_signal("dialogue_finished") # emit the signal so other nodes can react
 		return
 	
 	$NinePatchRect/Name.text = dialogue[current_dialogue_id]['name']

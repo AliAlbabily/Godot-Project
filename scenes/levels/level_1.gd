@@ -14,3 +14,7 @@ func use_dialogue():
 	
 	if dialogue:
 		dialogue.start()
+
+
+func _on_dialogue_dialogue_finished() -> void:
+	$Portal.visible = true
