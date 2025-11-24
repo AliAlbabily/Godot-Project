@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://8c68dq5m66fh" path="res://scenes/objects/glitchy_bg.tscn" id="4_66tet"]
 [ext_resource type="AudioStream" uid="uid://0r00niqw68ah" path="res://audio/new_skill.mp3" id="5_7ycvg"]
 [ext_resource type="Script" uid="uid://obg86kpk8gpl" path="res://save_and_load.gd" id="5_8mm7a"]
-[ext_resource type="Script" uid="uid://qtll57aaynm3" path="res://scenes/button.gd" id="6_hq1ik"]
+
+[sub_resource type="GDScript" id="GDScript_hq1ik"]
+script/source = "extends Button
+"
 
 [node name="Main_Testing" type="Node"]
 script = ExtResource("1_66tet")
@@ -30,7 +33,7 @@ offset_top = 2.0
 offset_right = 100.0
 offset_bottom = 99.0
 text = "Click Me"
-script = ExtResource("6_hq1ik")
+script = SubResource("GDScript_hq1ik")
 metadata/_edit_lock_ = true
 
 [node name="Save" type="Button" parent="Save_and_Load"]
