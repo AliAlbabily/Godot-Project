@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2wp31eiupiqu"]
+[gd_scene load_steps=7 format=3 uid="uid://d2wp31eiupiqu"]
 
 [ext_resource type="Script" uid="uid://raqcu4w6jowm" path="res://scenes/levels/level_1.gd" id="1_bfxgj"]
 [ext_resource type="Texture2D" uid="uid://cghr181t2uujb" path="res://images/castle-corridor.jpg" id="2_dywbp"]
 [ext_resource type="PackedScene" uid="uid://d06eup4nchehj" path="res://scenes/characters/mysterious_man.tscn" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://s13eh812jvlv" path="res://scenes/objects/dialog_textbox.tscn" id="4_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://bu6400adu5ahr" path="res://scenes/objects/portal.tscn" id="4_dywbp"]
+[ext_resource type="AudioStream" uid="uid://b7nkm2rsyc65m" path="res://audio/portal.mp3" id="6_1seuy"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_bfxgj")
@@ -35,7 +36,10 @@ offset_top = -176.0
 offset_right = 320.0
 grow_horizontal = 2
 grow_vertical = 0
-metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1seuy")
+volume_db = 10.0
 
 [connection signal="input_event" from="MysteriousMan" to="." method="_on_mysterious_man_input_event"]
 [connection signal="dialogue_finished" from="CanvasLayer/Dialogue" to="." method="_on_dialogue_dialogue_finished"]
