@@ -9,7 +9,10 @@ func _on_mysterious_man_input_event(viewport: Node, event: InputEvent, shape_idx
 		if !dialogue_activated:
 			use_dialogue()
 			dialogue_activated = true
-			#SceneTransition.change_scene('res://scenes/battle_prototype.tscn')
+			
+func _on_portal_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		SceneTransition.change_scene('res://scenes/battle_prototype.tscn')
 		
 func use_dialogue():
 	var dialogue = get_node("CanvasLayer/Dialogue")
@@ -27,5 +30,4 @@ func play_portal_sound_effect():
 	portal_appears.play()
 	
 func play_portal_animations():
-	#portal_animation_player.play("slide_in", 0.1)
 	portal_animation_player.play("portal_animations")

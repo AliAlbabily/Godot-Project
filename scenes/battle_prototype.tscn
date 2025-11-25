@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://gutl1uw80tyh"]
+[gd_scene load_steps=15 format=3 uid="uid://gutl1uw80tyh"]
 
 [ext_resource type="Texture2D" uid="uid://drbqt2ouydoen" path="res://images/battle-stage.png" id="1_6cgca"]
+[ext_resource type="Script" uid="uid://b25ub0u5rq3cu" path="res://scenes/battle_prototype.gd" id="1_cyiub"]
 [ext_resource type="Texture2D" uid="uid://7johx0ys72cs" path="res://images/enemy-warrior.png" id="2_0s860"]
 [ext_resource type="Script" uid="uid://bq322hnxonaxc" path="res://scenes/player_actions.gd" id="3_vcnw4"]
 [ext_resource type="Texture2D" uid="uid://cb8alcoyeewrf" path="res://images/shield-cropped.png" id="4_vwesj"]
@@ -115,6 +116,7 @@ _data = {
 }
 
 [node name="BattlePrototype" type="Node2D"]
+script = ExtResource("1_cyiub")
 
 [node name="Battle-stage" type="Sprite2D" parent="."]
 position = Vector2(638, 441)
