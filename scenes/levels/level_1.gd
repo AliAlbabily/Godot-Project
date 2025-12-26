@@ -15,7 +15,7 @@ func _on_portal_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 		SceneTransition.change_scene('res://scenes/battle_prototype.tscn')
 		
 func use_dialogue():
-	var dialogue = get_node("CanvasLayer/Dialogue")
+	var dialogue = get_node("Dialogue")
 	
 	if dialogue:
 		dialogue.start()

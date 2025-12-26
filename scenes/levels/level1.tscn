@@ -66,17 +66,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_8a7m2")
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Dialogue" parent="CanvasLayer" instance=ExtResource("4_2r1tl")]
+[node name="Dialogue" parent="." instance=ExtResource("4_2r1tl")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -320.0
-offset_top = -176.0
-offset_right = 320.0
+offset_left = 320.0
+offset_top = 544.0
+offset_right = 960.0
+offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -86,4 +85,4 @@ volume_db = 10.0
 
 [connection signal="input_event" from="MysteriousMan" to="." method="_on_mysterious_man_input_event"]
 [connection signal="input_event" from="Portal" to="." method="_on_portal_input_event"]
-[connection signal="dialogue_finished" from="CanvasLayer/Dialogue" to="." method="_on_dialogue_dialogue_finished"]
+[connection signal="dialogue_finished" from="Dialogue" to="." method="_on_dialogue_dialogue_finished"]

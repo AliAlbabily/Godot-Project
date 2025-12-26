@@ -8,7 +8,7 @@ var current_dialogue_id = 0
 var d_active = false
 
 func _ready():
-	$NinePatchRect.visible = false
+	$NinePatchRect.visible = false # make the dialogue hidden by default
 	
 func start():
 	if d_active:
