@@ -4,11 +4,20 @@ var dialogue_activated = false
 @onready var portal_appears: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var portal_animation_player: AnimationPlayer = $Portal/AnimationPlayer
 
+# TODO:
+@onready var current_background_placeholder: Sprite2D = $Level1Background
+
 func _on_mysterious_man_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if !dialogue_activated:
 			use_dialogue()
 			dialogue_activated = true
+			
+			# TODO: 
+			BackgroundSwitcher.set_background(
+				current_background_placeholder,
+				"res://images/level1_images/castle-corridor-zoomed-in.jpg"
+			)
 			
 func _on_portal_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
