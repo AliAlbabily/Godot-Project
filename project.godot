@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="GameDemoGithub"
-run/main_scene="uid://gutl1uw80tyh"
+run/main_scene="uid://bbmff404ggn6b"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SceneTransition="*res://scenes/transitions/scene_transition.tscn"
-BackgroundSwitcher="*res://scenes/utils/switch_level_background.gd"
+LevelUtils="*res://scenes/utils/level_utils.gd"
 
 [display]
 

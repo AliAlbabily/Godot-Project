@@ -14,7 +14,7 @@ func _on_mysterious_man_input_event(viewport: Node, event: InputEvent, shape_idx
 			dialogue_activated = true
 			
 			# TODO: 
-			BackgroundSwitcher.set_background(
+			LevelUtils.set_background(
 				current_background_placeholder,
 				"res://images/level1_images/castle-corridor-zoomed-in.jpg"
 			)
