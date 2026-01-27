@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2wp31eiupiqu"]
+[gd_scene load_steps=11 format=3 uid="uid://d2wp31eiupiqu"]
 
 [ext_resource type="Script" uid="uid://raqcu4w6jowm" path="res://scenes/levels/level_1.gd" id="1_bfxgj"]
 [ext_resource type="Texture2D" uid="uid://cghr181t2uujb" path="res://images/level1_images/castle-corridor.jpg" id="2_dywbp"]
 [ext_resource type="PackedScene" uid="uid://d06eup4nchehj" path="res://scenes/characters/mysterious_man.tscn" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://s13eh812jvlv" path="res://scenes/objects/dialog_textbox.tscn" id="4_2r1tl"]
+[ext_resource type="Script" uid="uid://bsys4xljxjwl8" path="res://scenes/characters/mysterious_man.gd" id="4_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://bu6400adu5ahr" path="res://scenes/objects/portal.tscn" id="4_dywbp"]
 [ext_resource type="AudioStream" uid="uid://b7nkm2rsyc65m" path="res://audio/portal.mp3" id="6_1seuy"]
 
@@ -56,6 +57,7 @@ metadata/_edit_lock_ = true
 [node name="MysteriousMan" parent="." instance=ExtResource("3_1seuy")]
 position = Vector2(638, 478)
 scale = Vector2(2, 2)
+script = ExtResource("4_8a7m2")
 
 [node name="Portal" parent="." instance=ExtResource("4_dywbp")]
 modulate = Color(1, 1, 1, 0)
@@ -83,6 +85,7 @@ offset_right = 960.0
 offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_1seuy")
@@ -90,5 +93,5 @@ volume_db = 10.0
 
 [connection signal="input_event" from="MysteriousMan" to="." method="_on_mysterious_man_input_event"]
 [connection signal="input_event" from="Portal" to="." method="_on_portal_input_event"]
-[connection signal="input_event" from="MysteriousManZoomedIn" to="." method="_on_mysterious_man_input_event"]
+[connection signal="input_event" from="MysteriousManZoomedIn" to="." method="_on_mysterious_man_zoomed_in_input_event"]
 [connection signal="dialogue_finished" from="Dialogue" to="." method="_on_dialogue_dialogue_finished"]
