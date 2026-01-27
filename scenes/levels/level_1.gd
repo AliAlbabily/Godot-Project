@@ -13,11 +13,14 @@ func _on_mysterious_man_input_event(viewport: Node, event: InputEvent, shape_idx
 			use_dialogue()
 			dialogue_activated = true
 			
-			# TODO: 
 			LevelUtils.set_background(
 				current_background_placeholder,
 				"res://images/level1_images/castle-corridor-zoomed-in.jpg"
 			)
+			
+			var characterInNormalSize = get_node("MysteriousMan")
+			var characterZoomedIn = get_node("MysteriousManZoomedIn")
+			LevelUtils.character_switch(characterInNormalSize, characterZoomedIn)
 			
 func _on_portal_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
