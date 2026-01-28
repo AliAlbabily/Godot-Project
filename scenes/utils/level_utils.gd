@@ -10,3 +10,7 @@ func character_switch(node_to_hide: Node, node_to_display: Node) -> void:
 
 	if node_to_display:
 		node_to_display.visible = true
+		
+func adjust_page_zooming(current_sprite: Sprite2D, texture_path: String, node_to_hide: Node, node_to_display: Node):
+	set_background(current_sprite, texture_path)
+	character_switch(node_to_hide, node_to_display)

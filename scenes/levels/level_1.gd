@@ -4,6 +4,8 @@ var dialogue_activated = false
 @onready var portal_appears: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var portal_animation_player: AnimationPlayer = $Portal/AnimationPlayer
 @onready var current_background_placeholder: Sprite2D = $Level1Background
+@onready var characterInNormalSize = get_node("MysteriousMan")
+@onready var characterZoomedIn = get_node("MysteriousManZoomedIn")
 
 func _on_portal_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
@@ -14,12 +16,6 @@ func use_dialogue():
 	
 	if dialogue:
 		dialogue.start()
-
-
-func _on_dialogue_dialogue_finished() -> void:
-	$Portal.visible = true
-	play_portal_sound_effect()
-	play_portal_animations()
 	
 func play_portal_sound_effect():
 	portal_appears.play()
@@ -35,11 +31,20 @@ func _on_mysterious_man_zoomed_in_input_event(viewport: Node, event: InputEvent,
 
 func _on_mysterious_man_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		LevelUtils.set_background(
+		LevelUtils.adjust_page_zooming(
 			current_background_placeholder,
-			"res://images/level1_images/castle-corridor-zoomed-in.jpg"
+			"res://images/level1_images/castle-corridor-zoomed-in.jpg",
+			characterInNormalSize,
+			characterZoomedIn
 		)
 
-		var characterInNormalSize = get_node("MysteriousMan")
-		var characterZoomedIn = get_node("MysteriousManZoomedIn")
-		LevelUtils.character_switch(characterInNormalSize, characterZoomedIn)
+func _on_dialogue_finished() -> void:
+	$Portal.visible = true
+	play_portal_sound_effect()
+	play_portal_animations()
+	LevelUtils.adjust_page_zooming(
+		current_background_placeholder,
+		"res://images/level1_images/castle-corridor.jpg",
+		characterZoomedIn,
+		characterInNormalSize
+	)

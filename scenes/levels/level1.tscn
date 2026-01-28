@@ -94,4 +94,4 @@ volume_db = 10.0
 [connection signal="input_event" from="MysteriousMan" to="." method="_on_mysterious_man_input_event"]
 [connection signal="input_event" from="Portal" to="." method="_on_portal_input_event"]
 [connection signal="input_event" from="MysteriousManZoomedIn" to="." method="_on_mysterious_man_zoomed_in_input_event"]
-[connection signal="dialogue_finished" from="Dialogue" to="." method="_on_dialogue_dialogue_finished"]
+[connection signal="dialogue_finished" from="Dialogue" to="." method="_on_dialogue_finished"]
