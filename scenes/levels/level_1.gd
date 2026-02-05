@@ -22,6 +22,14 @@ func play_portal_sound_effect():
 	
 func play_portal_animations():
 	portal_animation_player.play("portal_animations")
+	
+func disable_mouse_temporarily():
+	# Hide the cursor and ignore all mouse clicks/movement globally
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# Wait for 2 seconds
+	await get_tree().create_timer(2.0).timeout
+	# Show the cursor and re-enable clicks
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_mysterious_man_zoomed_in_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
@@ -48,4 +56,5 @@ func _on_dialogue_finished() -> void:
 		characterZoomedIn,
 		characterInNormalSize
 	)
+	disable_mouse_temporarily()
 	characterInNormalSize.trigger_fade_effect()
