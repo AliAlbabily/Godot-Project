@@ -48,3 +48,4 @@ func _on_dialogue_finished() -> void:
 		characterZoomedIn,
 		characterInNormalSize
 	)
+	characterInNormalSize.trigger_fade_effect()
