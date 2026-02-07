@@ -107,4 +107,4 @@ func play_fade_out_animation():
 		
 func go_to_next_scene():
 	await play_fade_out_animation()
-	get_tree().change_scene_to_file("res://main_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
