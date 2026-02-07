@@ -1,31 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3huq2i6ocse5"]
+[gd_scene load_steps=7 format=3 uid="uid://b3huq2i6ocse5"]
 
-[ext_resource type="Texture2D" uid="uid://dyx58ny1mh0pr" path="res://images/b-o-w-qin-mansion-hall-render-01j.jpg" id="1_8mm7a"]
-[ext_resource type="Script" uid="uid://ckoc2uijsgj75" path="res://scenes/main_scene.gd" id="1_66tet"]
-[ext_resource type="PackedScene" uid="uid://di85w5pvhsfd7" path="res://scenes/characters/character.tscn" id="2_hq1ik"]
-[ext_resource type="PackedScene" uid="uid://8c68dq5m66fh" path="res://scenes/objects/glitchy_bg.tscn" id="4_66tet"]
-[ext_resource type="AudioStream" uid="uid://0r00niqw68ah" path="res://audio/new_skill.mp3" id="5_7ycvg"]
-[ext_resource type="Script" uid="uid://obg86kpk8gpl" path="res://save_and_load.gd" id="5_8mm7a"]
-
-[sub_resource type="GDScript" id="GDScript_hq1ik"]
-script/source = "extends Button
-"
+[ext_resource type="Script" uid="uid://ckoc2uijsgj75" path="res://scenes/test_files/main_scene.gd" id="1_4og6k"]
+[ext_resource type="Texture2D" uid="uid://dyx58ny1mh0pr" path="res://images/b-o-w-qin-mansion-hall-render-01j.jpg" id="2_6dfhm"]
+[ext_resource type="PackedScene" uid="uid://di85w5pvhsfd7" path="res://scenes/characters/character.tscn" id="3_8xqy5"]
+[ext_resource type="Script" uid="uid://obg86kpk8gpl" path="res://scenes/test_files/save_and_load.gd" id="4_g7gdr"]
+[ext_resource type="PackedScene" uid="uid://8c68dq5m66fh" path="res://scenes/objects/glitchy_bg.tscn" id="5_b5utm"]
+[ext_resource type="AudioStream" uid="uid://0r00niqw68ah" path="res://audio/new_skill.mp3" id="6_s8575"]
 
 [node name="Main_Testing" type="Node"]
-script = ExtResource("1_66tet")
+script = ExtResource("1_4og6k")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(644.839, 364.499)
 scale = Vector2(0.671712, 0.675002)
-texture = ExtResource("1_8mm7a")
+texture = ExtResource("2_6dfhm")
 metadata/_edit_lock_ = true
 
-[node name="CharacterNode" parent="Background" instance=ExtResource("2_hq1ik")]
+[node name="CharacterNode" parent="Background" instance=ExtResource("3_8xqy5")]
 position = Vector2(744.607, 231.853)
 
 [node name="Save_and_Load" type="Node2D" parent="."]
-script = ExtResource("5_8mm7a")
+script = ExtResource("4_g7gdr")
 
 [node name="Button" type="Button" parent="Save_and_Load"]
 offset_left = 3.0
@@ -33,7 +29,6 @@ offset_top = 2.0
 offset_right = 100.0
 offset_bottom = 99.0
 text = "Click Me"
-script = SubResource("GDScript_hq1ik")
 metadata/_edit_lock_ = true
 
 [node name="Save" type="Button" parent="Save_and_Load"]
@@ -60,11 +55,11 @@ offset_bottom = 98.0
 text = "Counter Result"
 metadata/_edit_lock_ = true
 
-[node name="Animated_Background" parent="." instance=ExtResource("4_66tet")]
+[node name="Animated_Background" parent="." instance=ExtResource("5_b5utm")]
 visible = false
 
 [node name="NewSkillSoundEffect" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_7ycvg")
+stream = ExtResource("6_s8575")
 volume_db = -5.0
 
 [connection signal="pressed" from="Save_and_Load/Button" to="Save_and_Load" method="_on_button_pressed"]
