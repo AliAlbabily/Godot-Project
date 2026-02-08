@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://pvqoevjiafbh"]
+
+[ext_resource type="Script" uid="uid://b5tgybrrfpjtj" path="res://scenes/test_files/turn_manager.gd" id="1_hv3ym"]
+[ext_resource type="Texture2D" uid="uid://cghr181t2uujb" path="res://images/level1_images/castle-corridor.jpg" id="1_k4mup"]
+
+[node name="BattleManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hv3ym")
+
+[node name="Level1Background" type="Sprite2D" parent="."]
+position = Vector2(638, 358)
+scale = Vector2(1.79645, 1.79645)
+texture = ExtResource("1_k4mup")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 145.0
+offset_bottom = 167.0
+alignment = 1
+
+[node name="PlayerLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Player Label"
+
+[node name="EnemyLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Enemy Label"
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Info Label"
+
+[node name="AttackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Attack"
+
+[connection signal="pressed" from="VBoxContainer/AttackButton" to="." method="_on_attack_button_pressed"]
