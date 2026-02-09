@@ -124,10 +124,11 @@ scale = Vector2(0.921875, 0.921875)
 texture = ExtResource("1_6cgca")
 metadata/_edit_lock_ = true
 
-[node name="Warrior" type="Sprite2D" parent="."]
+[node name="Warrior-test" type="Sprite2D" parent="."]
 position = Vector2(825, 386)
 scale = Vector2(0.334961, 0.334961)
 texture = ExtResource("2_0s860")
+metadata/_edit_lock_ = true
 
 [node name="PlayerActions" type="Node2D" parent="."]
 script = ExtResource("3_vcnw4")

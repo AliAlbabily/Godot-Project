@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm5sp2ui401bs"]
+
+[ext_resource type="Script" uid="uid://cdyruxl6c30nu" path="res://scenes/characters/enemies/warrior.gd" id="1_hmqjp"]
+[ext_resource type="Texture2D" uid="uid://bmthhsiauifbf" path="res://icon.svg" id="1_wchkq"]
+[ext_resource type="Resource" uid="uid://dg4fy06omcq6o" path="res://Resources/warrior.tres" id="2_lne7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wchkq"]
+size = Vector2(196, 198)
+
+[node name="Warrior" type="Area2D"]
+script = ExtResource("1_hmqjp")
+stats = ExtResource("2_lne7u")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(37, 37)
+scale = Vector2(1.57813, 1.57813)
+texture = ExtResource("1_wchkq")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(37, 37)
+shape = SubResource("RectangleShape2D_wchkq")
+metadata/_edit_lock_ = true

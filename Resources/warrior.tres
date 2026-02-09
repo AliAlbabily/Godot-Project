@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_kakq7")
-enemy_name = "Generic Enemy"
+enemy_name = "Warrior"
 max_health = 100
 attack_damage = 10
 defense = 5
