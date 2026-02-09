@@ -2,7 +2,7 @@ extends Control
 
 enum Turn { PLAYER, ENEMY }
 
-var turn = Turn.PLAYER
+var current_turn : Turn = Turn.PLAYER
 var player_hp := 30
 var enemy_hp := 25
 var battle_over := false
@@ -11,7 +11,6 @@ var battle_over := false
 @onready var enemy_label = $VBoxContainer/EnemyLabel
 @onready var info_label = $VBoxContainer/InfoLabel
 @onready var attack_button = $VBoxContainer/AttackButton
-
 
 func _ready():
 	print("Battle Start!")
@@ -28,20 +27,20 @@ func update_ui():
 func start_turn():
 	if battle_over:
 		return
-		
-	if turn == Turn.PLAYER:
-		info_label.text = "Your turn"
-		attack_button.disabled = false
-	else:
-		info_label.text = "Enemy thinking..."
-		attack_button.disabled = true
-		enemy_turn()
 
+	match current_turn:
+		Turn.PLAYER:
+			info_label.text = "Your turn"
+			attack_button.disabled = false
+		Turn.ENEMY:
+			info_label.text = "Enemy thinking..."
+			attack_button.disabled = true
+			enemy_turn()
 
 # -------- PLAYER --------
 
 func player_attack():
-	if turn != Turn.PLAYER:
+	if current_turn != Turn.PLAYER:
 		return
 		
 	var dmg = randi_range(4, 8)
@@ -54,11 +53,10 @@ func player_attack():
 func _on_attack_button_pressed() -> void:
 	player_attack()
 
-
 # -------- ENEMY --------
 
 func enemy_turn():
-	await get_tree().create_timer(1.0).timeout  # simple delay "animation"
+	await get_tree().create_timer(1.5).timeout  # simple delay "animation"
 	
 	var dmg = randi_range(3, 6)
 	player_hp -= dmg
@@ -67,17 +65,15 @@ func enemy_turn():
 	check_battle()
 	end_turn()
 
-
 # -------- FLOW --------
 
 func end_turn():
 	if battle_over:
 		return
 		
-	turn = Turn.ENEMY if turn == Turn.PLAYER else Turn.PLAYER
-	await get_tree().create_timer(0.6).timeout
+	current_turn = Turn.ENEMY if current_turn == Turn.PLAYER else Turn.PLAYER
+	await get_tree().create_timer(1.5).timeout
 	start_turn()
-
 
 func check_battle():
 	if player_hp <= 0:
