@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://dg4fy06omcq6o"]
+
+[ext_resource type="Script" uid="uid://bg8yu4j40smwt" path="res://classes/enemy_stats.gd" id="1_kakq7"]
+
+[resource]
+script = ExtResource("1_kakq7")
+enemy_name = "Generic Enemy"
+max_health = 100
+attack_damage = 10
+defense = 5
+metadata/_custom_type_script = "uid://bg8yu4j40smwt"
