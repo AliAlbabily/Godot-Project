@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ojcatc721a8"
-path="res://.godot/imported/dragon.png-449c93a0130f53d7031ecece2b421156.ctex"
+uid="uid://dyx58ny1mh0pr"
+path="res://.godot/imported/b-o-w-qin-mansion-hall-render-01j.jpg-fafe81ee68173fb2378f097feda8a9ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/dragon.png"
-dest_files=["res://.godot/imported/dragon.png-449c93a0130f53d7031ecece2b421156.ctex"]
+source_file="res://art/images/b-o-w-qin-mansion-hall-render-01j.jpg"
+dest_files=["res://.godot/imported/b-o-w-qin-mansion-hall-render-01j.jpg-fafe81ee68173fb2378f097feda8a9ab.ctex"]
 
 [params]
 

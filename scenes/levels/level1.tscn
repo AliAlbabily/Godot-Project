@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2wp31eiupiqu"]
 
 [ext_resource type="Script" uid="uid://raqcu4w6jowm" path="res://scenes/levels/level_1.gd" id="1_bfxgj"]
-[ext_resource type="Texture2D" uid="uid://cghr181t2uujb" path="res://images/level1_images/castle-corridor.jpg" id="2_dywbp"]
+[ext_resource type="Texture2D" uid="uid://cghr181t2uujb" path="res://art/images/level1_images/castle-corridor.jpg" id="2_dywbp"]
 [ext_resource type="PackedScene" uid="uid://d06eup4nchehj" path="res://scenes/characters/mysterious_man.tscn" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://s13eh812jvlv" path="res://scenes/objects/dialog_textbox.tscn" id="4_2r1tl"]
 [ext_resource type="Script" uid="uid://bsys4xljxjwl8" path="res://scenes/characters/mysterious_man.gd" id="4_8a7m2"]

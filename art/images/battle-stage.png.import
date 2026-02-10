@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw0nrb5t0s64t"
-path="res://.godot/imported/speech-bubble.webp-560bc77c1f06f22b3656ba43d078d475.ctex"
+uid="uid://drbqt2ouydoen"
+path="res://.godot/imported/battle-stage.png-959b20faaaa0d917334ad820c2da96e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/speech-bubble.webp"
-dest_files=["res://.godot/imported/speech-bubble.webp-560bc77c1f06f22b3656ba43d078d475.ctex"]
+source_file="res://art/images/battle-stage.png"
+dest_files=["res://.godot/imported/battle-stage.png-959b20faaaa0d917334ad820c2da96e7.ctex"]
 
 [params]
 

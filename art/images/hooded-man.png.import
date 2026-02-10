@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw5qnjpspgyra"
-path="res://.godot/imported/dialog-box-pixel-art.png-b6563fd8851758787c4e3192230e9190.ctex"
+uid="uid://du5gjmjsv8l0r"
+path="res://.godot/imported/hooded-man.png-2b3760e2461651edb980af85b6e845a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/dialog-box-pixel-art.png"
-dest_files=["res://.godot/imported/dialog-box-pixel-art.png-b6563fd8851758787c4e3192230e9190.ctex"]
+source_file="res://art/images/hooded-man.png"
+dest_files=["res://.godot/imported/hooded-man.png-2b3760e2461651edb980af85b6e845a4.ctex"]
 
 [params]
 

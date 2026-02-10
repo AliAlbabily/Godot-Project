@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb8alcoyeewrf"
-path="res://.godot/imported/shield-cropped.png-eed107217f365b74e7e1da48558fb510.ctex"
+uid="uid://b6hmm1cbgwj8w"
+path="res://.godot/imported/samurai.png-f65aca897e2d54a4d9a4c114248a63e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/shield-cropped.png"
-dest_files=["res://.godot/imported/shield-cropped.png-eed107217f365b74e7e1da48558fb510.ctex"]
+source_file="res://art/images/samurai.png"
+dest_files=["res://.godot/imported/samurai.png-f65aca897e2d54a4d9a4c114248a63e9.ctex"]
 
 [params]
 

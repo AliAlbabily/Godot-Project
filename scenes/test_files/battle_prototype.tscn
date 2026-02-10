@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://gutl1uw80tyh"]
 
-[ext_resource type="Texture2D" uid="uid://drbqt2ouydoen" path="res://images/battle-stage.png" id="1_6cgca"]
+[ext_resource type="Texture2D" uid="uid://drbqt2ouydoen" path="res://art/images/battle-stage.png" id="1_6cgca"]
 [ext_resource type="Script" uid="uid://b25ub0u5rq3cu" path="res://scenes/test_files/battle_prototype.gd" id="1_cyiub"]
-[ext_resource type="Texture2D" uid="uid://7johx0ys72cs" path="res://images/enemy-warrior.png" id="2_0s860"]
+[ext_resource type="Texture2D" uid="uid://7johx0ys72cs" path="res://art/images/enemy-warrior.png" id="2_0s860"]
 [ext_resource type="Script" uid="uid://bq322hnxonaxc" path="res://scenes/test_files/player_actions.gd" id="3_vcnw4"]
-[ext_resource type="Texture2D" uid="uid://cb8alcoyeewrf" path="res://images/shield-cropped.png" id="4_vwesj"]
-[ext_resource type="Texture2D" uid="uid://dd6tnr6mrbmgi" path="res://images/sword-cropped.png" id="5_e4dlj"]
+[ext_resource type="Texture2D" uid="uid://cb8alcoyeewrf" path="res://art/images/shield-cropped.png" id="4_vwesj"]
+[ext_resource type="Texture2D" uid="uid://dd6tnr6mrbmgi" path="res://art/images/sword-cropped.png" id="5_e4dlj"]
 
 [sub_resource type="Animation" id="Animation_cyiub"]
 length = 1.5

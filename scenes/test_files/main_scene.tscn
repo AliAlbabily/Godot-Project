@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3huq2i6ocse5"]
 
 [ext_resource type="Script" uid="uid://ckoc2uijsgj75" path="res://scenes/test_files/main_scene.gd" id="1_4og6k"]
-[ext_resource type="Texture2D" uid="uid://dyx58ny1mh0pr" path="res://images/b-o-w-qin-mansion-hall-render-01j.jpg" id="2_6dfhm"]
+[ext_resource type="Texture2D" uid="uid://dyx58ny1mh0pr" path="res://art/images/b-o-w-qin-mansion-hall-render-01j.jpg" id="2_6dfhm"]
 [ext_resource type="PackedScene" uid="uid://di85w5pvhsfd7" path="res://scenes/characters/character.tscn" id="3_8xqy5"]
 [ext_resource type="Script" uid="uid://obg86kpk8gpl" path="res://scenes/test_files/save_and_load.gd" id="4_g7gdr"]
 [ext_resource type="PackedScene" uid="uid://8c68dq5m66fh" path="res://scenes/objects/glitchy_bg.tscn" id="5_b5utm"]

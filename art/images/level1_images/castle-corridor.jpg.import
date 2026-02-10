@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cghr181t2uujb"
-path="res://.godot/imported/castle-corridor.jpg-be50e37f2992bffb48c4f2bb3f9ff91d.ctex"
+path="res://.godot/imported/castle-corridor.jpg-4238d052affbab58f368b6b7509d859b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/level1_images/castle-corridor.jpg"
-dest_files=["res://.godot/imported/castle-corridor.jpg-be50e37f2992bffb48c4f2bb3f9ff91d.ctex"]
+source_file="res://art/images/level1_images/castle-corridor.jpg"
+dest_files=["res://.godot/imported/castle-corridor.jpg-4238d052affbab58f368b6b7509d859b.ctex"]
 
 [params]
 

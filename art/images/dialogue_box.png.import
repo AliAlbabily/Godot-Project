@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd6tnr6mrbmgi"
-path="res://.godot/imported/sword-cropped.png-cee5a5164f6996f722ad027947527e3d.ctex"
+uid="uid://mqpwkknv4hh4"
+path="res://.godot/imported/dialogue_box.png-0f3607d08e7b77755011a84dc47343bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sword-cropped.png"
-dest_files=["res://.godot/imported/sword-cropped.png-cee5a5164f6996f722ad027947527e3d.ctex"]
+source_file="res://art/images/dialogue_box.png"
+dest_files=["res://.godot/imported/dialogue_box.png-0f3607d08e7b77755011a84dc47343bf.ctex"]
 
 [params]
 

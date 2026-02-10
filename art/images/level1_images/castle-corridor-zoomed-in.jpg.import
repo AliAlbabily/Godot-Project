@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyx58ny1mh0pr"
-path="res://.godot/imported/b-o-w-qin-mansion-hall-render-01j.jpg-d2ed9083dd37951be6425789198b93d5.ctex"
+uid="uid://cwbvvp4cp3pmd"
+path="res://.godot/imported/castle-corridor-zoomed-in.jpg-bfc9255c7bcf87d56cccfe4ff8b017ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/b-o-w-qin-mansion-hall-render-01j.jpg"
-dest_files=["res://.godot/imported/b-o-w-qin-mansion-hall-render-01j.jpg-d2ed9083dd37951be6425789198b93d5.ctex"]
+source_file="res://art/images/level1_images/castle-corridor-zoomed-in.jpg"
+dest_files=["res://.godot/imported/castle-corridor-zoomed-in.jpg-bfc9255c7bcf87d56cccfe4ff8b017ab.ctex"]
 
 [params]
 

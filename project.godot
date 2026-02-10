@@ -24,15 +24,19 @@ LevelUtils="*res://scenes/utils/level_utils.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [file_customization]
 
 folder_colors={
 "res://Resources/": "purple",
-"res://art/": "teal",
+"res://art/": "pink",
+"res://art/icons/": "pink",
+"res://art/images/": "pink",
+"res://art/splited_frames/": "pink",
+"res://audio/": "green",
 "res://classes/": "orange",
-"res://images/": "pink",
 "res://scenes/": "yellow"
 }
 

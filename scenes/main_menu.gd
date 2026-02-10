@@ -12,10 +12,10 @@ var music_playing: bool = true
 
 # Background images
 var images: Array[Texture2D] = [
-	preload("res://images/ninja.png"),
-	preload("res://images/samurai.png"),
-	preload("res://images/dragon.png"),
-	preload("res://images/warrior.png"),
+	preload("res://art/images/ninja.png"),
+	preload("res://art/images/samurai.png"),
+	preload("res://art/images/dragon.png"),
+	preload("res://art/images/warrior.png"),
 ]
 
 var current_index: int = -1

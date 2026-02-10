@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsbuy8rplmqbc"
-path="res://.godot/imported/mansion-room.jpg-24501b52046a95fe27c865efd3fd77f3.ctex"
+uid="uid://5ojcatc721a8"
+path="res://.godot/imported/dragon.png-3abc43572ad32d40e977cd5697a40132.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/mansion-room.jpg"
-dest_files=["res://.godot/imported/mansion-room.jpg-24501b52046a95fe27c865efd3fd77f3.ctex"]
+source_file="res://art/images/dragon.png"
+dest_files=["res://.godot/imported/dragon.png-3abc43572ad32d40e977cd5697a40132.ctex"]
 
 [params]
 

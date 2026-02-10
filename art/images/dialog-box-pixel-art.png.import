@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6hmm1cbgwj8w"
-path="res://.godot/imported/samurai.png-89caf4319532f505e642f8f38019cd7c.ctex"
+uid="uid://dw5qnjpspgyra"
+path="res://.godot/imported/dialog-box-pixel-art.png-97ceafcde771f4cd1c87c1bf6f7aa549.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/samurai.png"
-dest_files=["res://.godot/imported/samurai.png-89caf4319532f505e642f8f38019cd7c.ctex"]
+source_file="res://art/images/dialog-box-pixel-art.png"
+dest_files=["res://.godot/imported/dialog-box-pixel-art.png-97ceafcde771f4cd1c87c1bf6f7aa549.ctex"]
 
 [params]
 

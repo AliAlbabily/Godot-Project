@@ -41,7 +41,7 @@ func _on_mysterious_man_input_event(viewport: Node, event: InputEvent, shape_idx
 	if event is InputEventMouseButton and event.pressed:
 		LevelUtils.adjust_page_zooming(
 			current_background_placeholder,
-			"res://images/level1_images/castle-corridor-zoomed-in.jpg",
+			"res://art/images/level1_images/castle-corridor-zoomed-in.jpg",
 			characterInNormalSize,
 			characterZoomedIn
 		)
@@ -52,7 +52,7 @@ func _on_dialogue_finished() -> void:
 	play_portal_animations()
 	LevelUtils.adjust_page_zooming(
 		current_background_placeholder,
-		"res://images/level1_images/castle-corridor.jpg",
+		"res://art/images/level1_images/castle-corridor.jpg",
 		characterZoomedIn,
 		characterInNormalSize
 	)

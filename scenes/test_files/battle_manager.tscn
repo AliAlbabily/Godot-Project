@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://pvqoevjiafbh"]
 
 [ext_resource type="Script" uid="uid://b5tgybrrfpjtj" path="res://scenes/test_files/turn_manager_testfile.gd" id="1_hv3ym"]
-[ext_resource type="Texture2D" uid="uid://cghr181t2uujb" path="res://images/level1_images/castle-corridor.jpg" id="1_k4mup"]
+[ext_resource type="Texture2D" uid="uid://cghr181t2uujb" path="res://art/images/level1_images/castle-corridor.jpg" id="1_k4mup"]
 
 [node name="BattleManager" type="Control"]
 layout_mode = 3

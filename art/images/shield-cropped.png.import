@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drbqt2ouydoen"
-path="res://.godot/imported/battle-stage.png-e1066b55de7c47c24ef8522f1d74569e.ctex"
+uid="uid://cb8alcoyeewrf"
+path="res://.godot/imported/shield-cropped.png-3c2ec085137704308d7a181b838c5f49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/battle-stage.png"
-dest_files=["res://.godot/imported/battle-stage.png-e1066b55de7c47c24ef8522f1d74569e.ctex"]
+source_file="res://art/images/shield-cropped.png"
+dest_files=["res://.godot/imported/shield-cropped.png-3c2ec085137704308d7a181b838c5f49.ctex"]
 
 [params]
 
