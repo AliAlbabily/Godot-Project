@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://gutl1uw80tyh"]
 
-[ext_resource type="Texture2D" uid="uid://drbqt2ouydoen" path="res://art/images/battle-stage.png" id="1_6cgca"]
-[ext_resource type="Script" uid="uid://b25ub0u5rq3cu" path="res://scenes/test_files/battle_prototype.gd" id="1_cyiub"]
-[ext_resource type="Texture2D" uid="uid://7johx0ys72cs" path="res://art/images/enemy-warrior.png" id="2_0s860"]
-[ext_resource type="Script" uid="uid://bq322hnxonaxc" path="res://scenes/test_files/player_actions.gd" id="3_vcnw4"]
-[ext_resource type="Texture2D" uid="uid://cb8alcoyeewrf" path="res://art/images/shield-cropped.png" id="4_vwesj"]
-[ext_resource type="Texture2D" uid="uid://dd6tnr6mrbmgi" path="res://art/images/sword-cropped.png" id="5_e4dlj"]
+[ext_resource type="Script" uid="uid://b25ub0u5rq3cu" path="res://scenes/levels/level2.gd" id="1_ok6xr"]
+[ext_resource type="Texture2D" uid="uid://drbqt2ouydoen" path="res://art/images/battle-stage.png" id="2_dj4wq"]
+[ext_resource type="Texture2D" uid="uid://7johx0ys72cs" path="res://art/images/enemy-warrior.png" id="3_k0mew"]
+[ext_resource type="Script" uid="uid://bq322hnxonaxc" path="res://scenes/test_files/player_actions.gd" id="4_b0vvs"]
+[ext_resource type="Texture2D" uid="uid://cb8alcoyeewrf" path="res://art/images/shield-cropped.png" id="5_oyk6k"]
+[ext_resource type="Texture2D" uid="uid://dd6tnr6mrbmgi" path="res://art/images/sword-cropped.png" id="6_gycjm"]
 
 [sub_resource type="Animation" id="Animation_cyiub"]
 length = 1.5
@@ -116,22 +116,22 @@ _data = {
 }
 
 [node name="BattlePrototype" type="Node2D"]
-script = ExtResource("1_cyiub")
+script = ExtResource("1_ok6xr")
 
 [node name="Battle-stage" type="Sprite2D" parent="."]
 position = Vector2(638, 441)
 scale = Vector2(0.921875, 0.921875)
-texture = ExtResource("1_6cgca")
+texture = ExtResource("2_dj4wq")
 metadata/_edit_lock_ = true
 
 [node name="Warrior-test" type="Sprite2D" parent="."]
 position = Vector2(825, 386)
 scale = Vector2(0.334961, 0.334961)
-texture = ExtResource("2_0s860")
+texture = ExtResource("3_k0mew")
 metadata/_edit_lock_ = true
 
 [node name="PlayerActions" type="Node2D" parent="."]
-script = ExtResource("3_vcnw4")
+script = ExtResource("4_b0vvs")
 
 [node name="Attack" type="Button" parent="PlayerActions"]
 offset_left = 453.0
@@ -150,7 +150,7 @@ text = "DEFENCE"
 [node name="Shield-cropped" type="Sprite2D" parent="."]
 position = Vector2(-178, 537)
 scale = Vector2(0.117735, 0.117735)
-texture = ExtResource("4_vwesj")
+texture = ExtResource("5_oyk6k")
 
 [node name="shield_animations" type="AnimationPlayer" parent="Shield-cropped"]
 libraries = {
@@ -165,7 +165,7 @@ metadata/_edit_lock_ = true
 [node name="Sword-cropped" type="Sprite2D" parent="."]
 position = Vector2(-184, 441)
 scale = Vector2(0.148341, 0.148341)
-texture = ExtResource("5_e4dlj")
+texture = ExtResource("6_gycjm")
 
 [node name="sword_animations" type="AnimationPlayer" parent="Sword-cropped"]
 libraries = {

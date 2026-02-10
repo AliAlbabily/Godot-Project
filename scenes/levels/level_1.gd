@@ -9,7 +9,7 @@ var dialogue_activated = false
 
 func _on_portal_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		SceneTransition.change_scene('res://scenes/test_files/battle_prototype.tscn')
+		SceneTransition.change_scene('res://scenes/levels/level2.tscn')
 		
 func use_dialogue():
 	var dialogue = get_node("Dialogue")
