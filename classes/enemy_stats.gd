@@ -8,3 +8,6 @@ class_name EnemyStats
 @export_group("Combat")
 @export var attack_damage: int = 10
 @export var defense: int = 5
+
+func _to_string() -> String:
+	return enemy_name

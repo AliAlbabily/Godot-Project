@@ -5,8 +5,8 @@ extends Control
 @onready var slideshow: TextureRect = $SlideShow
 @onready var fade_overlay: ColorRect = $SlideShow/FadeOverlay
 
-var music_on_icon: Texture2D = preload("res://icons/volume_on.png")
-var music_off_icon: Texture2D = preload("res://icons/volume_off.png")
+var music_on_icon: Texture2D = preload("res://art/icons/volume_on.png")
+var music_off_icon: Texture2D = preload("res://art/icons/volume_off.png")
 
 var music_playing: bool = true
 

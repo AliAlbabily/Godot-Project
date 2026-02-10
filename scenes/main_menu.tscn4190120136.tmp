@@ -425,12 +425,12 @@ text = "Quit
 metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(640, 232)
 scale = Vector2(0.73724, 0.737239)
 sprite_frames = SubResource("SpriteFrames_pvas3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
