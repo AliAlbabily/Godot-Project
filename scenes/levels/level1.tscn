@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://raqcu4w6jowm" path="res://scenes/levels/level_1.gd" id="1_bfxgj"]
 [ext_resource type="Texture2D" uid="uid://cghr181t2uujb" path="res://art/images/level1_images/castle-corridor.jpg" id="2_dywbp"]
-[ext_resource type="PackedScene" uid="uid://d06eup4nchehj" path="res://scenes/characters/mysterious_man.tscn" id="3_1seuy"]
+[ext_resource type="PackedScene" uid="uid://d06eup4nchehj" path="res://scenes/characters/npcs/mysterious_man.tscn" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://s13eh812jvlv" path="res://scenes/objects/dialog_textbox.tscn" id="4_2r1tl"]
-[ext_resource type="Script" uid="uid://bsys4xljxjwl8" path="res://scenes/characters/mysterious_man.gd" id="4_8a7m2"]
+[ext_resource type="Script" uid="uid://bsys4xljxjwl8" path="res://scenes/characters/npcs/mysterious_man.gd" id="4_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://bu6400adu5ahr" path="res://scenes/objects/portal.tscn" id="4_dywbp"]
 [ext_resource type="AudioStream" uid="uid://b7nkm2rsyc65m" path="res://audio/portal.mp3" id="6_1seuy"]
 

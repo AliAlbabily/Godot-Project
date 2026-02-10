@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d06eup4nchehj"]
 
-[ext_resource type="Script" uid="uid://be8gbqhh1aoq0" path="res://scenes/characters/mysterious_man_zoomed_in.gd" id="1_d7g1y"]
+[ext_resource type="Script" uid="uid://be8gbqhh1aoq0" path="res://scenes/characters/npcs/mysterious_man_zoomed_in.gd" id="1_d7g1y"]
 [ext_resource type="Texture2D" uid="uid://du5gjmjsv8l0r" path="res://art/images/hooded-man.png" id="1_lj18r"]
 
 [node name="MysteriousMan" type="Area2D"]
