@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_kakq7")
 enemy_name = "Warrior"
-max_health = 100
+max_health = 15
 attack_damage = 10
 defense = 5
 metadata/_custom_type_script = "uid://bg8yu4j40smwt"

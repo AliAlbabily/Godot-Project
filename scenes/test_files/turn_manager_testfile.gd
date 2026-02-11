@@ -3,9 +3,11 @@ extends Control
 enum Turn { PLAYER, ENEMY }
 
 var current_turn : Turn = Turn.PLAYER
-var player_hp := 30
-var enemy_hp := 25
+var player_hp: int
+var enemy_hp: int
 var battle_over := false
+
+@export var current_enemy_data : EnemyStats
 
 @onready var player_label = $VBoxContainer/PlayerLabel
 @onready var enemy_label = $VBoxContainer/EnemyLabel
@@ -13,11 +15,25 @@ var battle_over := false
 @onready var attack_button = $VBoxContainer/AttackButton
 
 func _ready():
-	print("Battle Start!")
-	randomize()
-	update_ui()
-	start_turn()
+	setup_battle(current_enemy_data)
 
+func setup_battle(enemy_data: EnemyStats):
+	# 1. Reset State
+	battle_over = false
+	current_turn = Turn.PLAYER
+	attack_button.disabled = false
+	
+	# 2. Reset Stats
+	player_hp = 25
+	enemy_hp = enemy_data.max_health
+	
+	# 3. Refresh UI
+	print("Enemy " + enemy_data.enemy_name + " appears!")
+	update_ui()
+	attack_button.disabled = false
+	
+	# 4. Start
+	start_turn()
 
 func update_ui():
 	player_label.text = "Player HP: %d" % player_hp

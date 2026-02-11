@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://pvqoevjiafbh"]
+[gd_scene load_steps=4 format=3 uid="uid://pvqoevjiafbh"]
 
 [ext_resource type="Script" uid="uid://b5tgybrrfpjtj" path="res://scenes/test_files/turn_manager_testfile.gd" id="1_hv3ym"]
 [ext_resource type="Texture2D" uid="uid://cghr181t2uujb" path="res://art/images/level1_images/castle-corridor.jpg" id="1_k4mup"]
+[ext_resource type="Resource" uid="uid://dg4fy06omcq6o" path="res://Resources/warrior.tres" id="2_dxy2t"]
 
 [node name="BattleManager" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_hv3ym")
+current_enemy_data = ExtResource("2_dxy2t")
 
 [node name="Level1Background" type="Sprite2D" parent="."]
 position = Vector2(638, 358)
