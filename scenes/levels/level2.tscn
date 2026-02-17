@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://gutl1uw80tyh"]
+[gd_scene load_steps=16 format=3 uid="uid://gutl1uw80tyh"]
 
 [ext_resource type="Script" uid="uid://b25ub0u5rq3cu" path="res://scenes/levels/level2.gd" id="1_ok6xr"]
 [ext_resource type="Texture2D" uid="uid://drbqt2ouydoen" path="res://art/images/battle-stage.png" id="2_dj4wq"]
+[ext_resource type="Resource" uid="uid://dg4fy06omcq6o" path="res://Resources/warrior.tres" id="2_k0mew"]
 [ext_resource type="Texture2D" uid="uid://7johx0ys72cs" path="res://art/images/enemy-warrior.png" id="3_k0mew"]
 [ext_resource type="Script" uid="uid://bq322hnxonaxc" path="res://scenes/test_files/player_actions.gd" id="4_b0vvs"]
 [ext_resource type="Texture2D" uid="uid://cb8alcoyeewrf" path="res://art/images/shield-cropped.png" id="5_oyk6k"]
@@ -117,6 +118,7 @@ _data = {
 
 [node name="BattlePrototype" type="Node2D"]
 script = ExtResource("1_ok6xr")
+current_enemy_data = ExtResource("2_k0mew")
 
 [node name="Battle-stage" type="Sprite2D" parent="."]
 position = Vector2(638, 441)
@@ -177,7 +179,31 @@ position = Vector2(6.10352e-05, -16.853)
 scale = Vector2(97.7477, 196.507)
 metadata/_edit_lock_ = true
 
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 1073.0
+offset_top = 504.0
+offset_right = 1218.0
+offset_bottom = 671.0
+alignment = 1
+
+[node name="PlayerLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Player Label"
+
+[node name="EnemyLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Enemy Label"
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Info Label"
+
+[node name="AttackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Attack"
+
 [connection signal="mouse_entered" from="PlayerActions/Attack" to="PlayerActions" method="_on_attack_mouse_entered"]
 [connection signal="mouse_exited" from="PlayerActions/Attack" to="PlayerActions" method="_on_attack_mouse_exited"]
 [connection signal="mouse_entered" from="PlayerActions/Defence" to="PlayerActions" method="_on_defence_mouse_entered"]
 [connection signal="mouse_exited" from="PlayerActions/Defence" to="PlayerActions" method="_on_defence_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/AttackButton" to="." method="_on_attack_button_pressed"]

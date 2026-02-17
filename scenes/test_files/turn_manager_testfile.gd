@@ -21,7 +21,6 @@ func setup_battle(enemy_data: EnemyStats):
 	# 1. Reset State
 	battle_over = false
 	current_turn = Turn.PLAYER
-	attack_button.disabled = false
 	
 	# 2. Reset Stats
 	player_hp = 25
