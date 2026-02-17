@@ -8,7 +8,7 @@ extends Node
 @onready var attack_button: Button = $VBoxContainer/AttackButton
 
 func _ready() -> void:
-	print("battle phase scene ready")
+	print("level 2 - battle phase scene ready")
 	
 	# Use TurnManager to access the class definition
 	var battle_ui = TurnManager.BattleUI.new()
@@ -22,7 +22,8 @@ func _ready() -> void:
 	TurnManager.setup_battle(current_enemy_data, battle_ui)
 
 func _exit_tree() -> void:
-	print("battle phase scene freed")
+	print("level 2 - battle phase scene freed")
 	
 func _on_attack_button_pressed() -> void:
-	pass # Replace with function body.
+	## TODO : In the future, add a paramater for type-of-attack inside player_attack()
+	TurnManager.player_attack()

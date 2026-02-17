@@ -10,7 +10,7 @@ class BattleUI extends RefCounted:
 enum Turn { PLAYER, ENEMY }
 
 var current_turn : Turn = Turn.PLAYER
-var player_hp: int = 25
+var player_hp: int = 7
 var enemy_hp: int = 0
 var battle_over := false
 
