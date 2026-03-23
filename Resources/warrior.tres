@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://dg4fy06omcq6o"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://dg4fy06omcq6o"]
 
+[ext_resource type="Script" uid="uid://0ydisrpwaklb" path="res://classes/enemy_action.gd" id="1_6s7id"]
 [ext_resource type="Script" uid="uid://bg8yu4j40smwt" path="res://classes/enemy_stats.gd" id="1_kakq7"]
 
 [resource]
 script = ExtResource("1_kakq7")
 enemy_name = "Warrior"
-max_health = 15
-attack_damage = 10
-defense = 5
+max_health = 50
+action_cycle = Array[ExtResource("1_6s7id")]([])
 metadata/_custom_type_script = "uid://bg8yu4j40smwt"
