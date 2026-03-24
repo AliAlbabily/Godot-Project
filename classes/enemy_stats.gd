@@ -14,6 +14,7 @@ func _to_string() -> String:
 	return enemy_name
 
 # Helper function to easily get the correct action based on the turn number
+## returns an enemy action
 func get_action(turn_index: int) -> EnemyAction:
 	if action_cycle.is_empty():
 		push_error("EnemyStats: action_cycle is empty for " + enemy_name)
