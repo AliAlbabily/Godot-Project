@@ -10,7 +10,7 @@ class BattleUI extends RefCounted:
 enum Turn { PLAYER, ENEMY }
 
 var current_turn : Turn = Turn.PLAYER
-var player_hp: int = 100
+var player_hp: int = 20
 var enemy_hp: int = 0
 var battle_over := false
 
@@ -98,7 +98,7 @@ func enemy_turn():
 	var enemy_action = current_enemy_stats.get_action(enemy_turn_index)
 	
 	if enemy_action == null:
-		print("No more actions")
+		push_error("No more actions to take")
 		return
 		
 	match enemy_action.type:
