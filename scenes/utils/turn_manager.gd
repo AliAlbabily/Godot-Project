@@ -9,19 +9,19 @@ class BattleUI extends RefCounted:
 
 enum Turn { PLAYER, ENEMY }
 
-var current_turn : Turn = Turn.PLAYER
-var player_hp: int = 20
-var enemy_hp: int = 0
-var battle_over := false
-
+@onready var player = Game.player
 var current_enemy_stats : EnemyStats
+
+var enemy_hp: int = 0
+
+var current_turn : Turn = Turn.PLAYER
+var battle_over := false
+var enemy_turn_index: int = 0
 
 var player_label: Label
 var enemy_label: Label
 var info_label: Label
 var attack_button: Button
-
-var enemy_turn_index: int = 0
 
 func setup_battle(enemy_data: EnemyStats, ui: BattleUI) -> void:
 	# Assign variables
@@ -51,7 +51,7 @@ func setup_battle(enemy_data: EnemyStats, ui: BattleUI) -> void:
 
 
 func update_ui():
-	player_label.text = "Player HP: %d" % player_hp
+	player_label.text = "Player HP: %d" % player.get_player_hp()
 	enemy_label.text = "Enemy HP: %d" % enemy_hp
 
 
@@ -85,9 +85,6 @@ func player_attack():
 	check_battle()
 	end_turn()
 
-func _on_attack_button_pressed() -> void:
-	player_attack()
-
 # -------- ENEMY --------
 
 func enemy_turn():
@@ -103,7 +100,7 @@ func enemy_turn():
 		
 	match enemy_action.type:
 		EnemyAction.ActionType.ATTACK:
-			player_hp -= enemy_action.damage
+			player.take_damage(enemy_action.damage)
 			info_label.text = "%s hits for %d!" % [current_enemy_stats.enemy_name, enemy_action.damage]
 		
 		EnemyAction.ActionType.DEFEND:
@@ -139,7 +136,7 @@ func end_turn():
 	start_turn()
 
 func check_battle():
-	if player_hp <= 0:
+	if player.get_player_hp() <= 0:
 		info_label.text = "You Lose!"
 		battle_over = true
 		attack_button.disabled = true
