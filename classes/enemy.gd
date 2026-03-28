@@ -1,5 +1,5 @@
 extends Resource
-class_name EnemyStats
+class_name Enemy
 
 @export_group("Base Stats")
 @export var enemy_name: String = "Generic Enemy"

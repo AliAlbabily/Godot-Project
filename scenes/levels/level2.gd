@@ -1,6 +1,6 @@
 extends Node
 
-@export var current_enemy_data : EnemyStats
+@export var current_enemy_data : Enemy
 
 @onready var player_label: Label = $VBoxContainer/PlayerLabel
 @onready var enemy_label: Label = $VBoxContainer/EnemyLabel

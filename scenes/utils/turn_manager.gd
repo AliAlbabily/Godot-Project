@@ -10,7 +10,7 @@ class BattleUI extends RefCounted:
 enum Turn { PLAYER, ENEMY }
 
 @onready var player = Game.player
-var current_enemy_stats : EnemyStats
+var current_enemy : Enemy
 
 var enemy_hp: int = 0
 
@@ -23,14 +23,14 @@ var enemy_label: Label
 var info_label: Label
 var attack_button: Button
 
-func setup_battle(enemy_data: EnemyStats, ui: BattleUI) -> void:
+func setup_battle(enemy_data: Enemy, ui: BattleUI) -> void:
 	# Assign variables
 	info_label = ui.info_label
 	player_label = ui.player_label
 	enemy_label = ui.enemy_label
 	attack_button = ui.attack_button
 	
-	current_enemy_stats = enemy_data
+	current_enemy = enemy_data
 	
 	# 1. Reset state variables
 	info_label.text = "Battle Started!"
@@ -92,7 +92,7 @@ func enemy_turn():
 	await get_tree().create_timer(1.5).timeout
 	
 	# enemy attacks logic
-	var enemy_action = current_enemy_stats.get_action(enemy_turn_index)
+	var enemy_action = current_enemy.get_action(enemy_turn_index)
 	
 	if enemy_action == null:
 		push_error("No more actions to take")
@@ -101,19 +101,19 @@ func enemy_turn():
 	match enemy_action.type:
 		EnemyAction.ActionType.ATTACK:
 			player.take_damage(enemy_action.damage)
-			info_label.text = "%s hits for %d!" % [current_enemy_stats.enemy_name, enemy_action.damage]
+			info_label.text = "%s hits for %d!" % [current_enemy.enemy_name, enemy_action.damage]
 		
 		EnemyAction.ActionType.DEFEND:
-			info_label.text = "%s defends for %d!" % [current_enemy_stats.enemy_name, enemy_action.defense]
+			info_label.text = "%s defends for %d!" % [current_enemy.enemy_name, enemy_action.defense]
 		
 		#EnemyAction.ActionType.HEAL:
-			#info_label.text = "%s heals for %d!" % [current_enemy_stats.enemy_name, enemy_action.heal]
+			#info_label.text = "%s heals for %d!" % [current_enemy.enemy_name, enemy_action.heal]
 		#
 		#EnemyAction.ActionType.MULTI_ATTACK:
 			#var total_damage = enemy_action.damage * enemy_action.multi_hit_count
 			#player_hp -= total_damage
 			#info_label.text = "%s hits %d times for %d total!" % [
-				#current_enemy_stats.enemy_name,
+				#current_enemy.enemy_name,
 				#enemy_action.multi_hit_count,
 				#total_damage
 			#]
