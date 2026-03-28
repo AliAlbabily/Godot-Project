@@ -1,6 +1,6 @@
 extends Node
 
-@export var current_enemy_data : Enemy
+@export var enemy_data : Enemy
 
 @onready var player_label: Label = $VBoxContainer/PlayerLabel
 @onready var enemy_label: Label = $VBoxContainer/EnemyLabel
@@ -19,7 +19,7 @@ func _ready() -> void:
 	battle_ui.info_label = info_label
 	battle_ui.attack_button = attack_button
 	
-	TurnManager.setup_battle(current_enemy_data, battle_ui)
+	TurnManager.setup_battle(enemy_data, battle_ui)
 
 func _exit_tree() -> void:
 	print("level 2 - battle phase scene freed")

@@ -118,7 +118,7 @@ _data = {
 
 [node name="BattlePrototype" type="Node2D"]
 script = ExtResource("1_ok6xr")
-current_enemy_data = ExtResource("2_k0mew")
+enemy_data = ExtResource("2_k0mew")
 
 [node name="Battle-stage" type="Sprite2D" parent="."]
 position = Vector2(638, 441)
