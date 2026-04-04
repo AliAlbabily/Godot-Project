@@ -3,6 +3,12 @@ class_name PlayerBuild
 
 var build_name: String = "Starting Build"
 
+# Stat Modifiers/Base Values for this specific build
+var build_hp: int = 0
+var build_damage: int = 0
+var build_defense: int = 0
+var build_heal: int = 0
+
 var skills: Array[String] = []
 
 func add_skill(skill: String) -> void:
@@ -24,7 +30,3 @@ func _fireball():
 
 func _negate_attack():
 	print("Attack negated!")
-	
-	
-#	TODO: Implement a way to call a build skill 
-# 	For example, player.get_build().use_skill(selected_skill)
