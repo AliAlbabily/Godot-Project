@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayerBuild" load_steps=2 format=3 uid="uid://q77vtpu7qtaw"]
+
+[ext_resource type="Script" uid="uid://bp2r77dcis2jt" path="res://classes/player_build.gd" id="1_u6rho"]
+
+[resource]
+script = ExtResource("1_u6rho")
+build_name = "Shield Master"
+build_hp = 1000
+build_damage = 20
+build_defense = 100
+build_heal = 20
+skills = Array[String](["negate_attack", "add_shield", "charge_up"])
+metadata/_custom_type_script = "uid://bp2r77dcis2jt"
