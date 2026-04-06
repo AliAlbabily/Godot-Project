@@ -23,6 +23,7 @@ func _ready() -> void:
 
 func apply_build_stats() -> void:
 	if not current_build:
+		push_error("Current build is null!")
 		return
 	
 	player_hp += current_build.build_hp
@@ -31,6 +32,13 @@ func apply_build_stats() -> void:
 	player_heal += current_build.build_heal
 	
 	print("Build Updated: ", current_build.build_name, " HP: ", player_hp)
+	
+func change_build(new_build: PlayerBuild) -> void:
+	if new_build:
+		current_build = new_build
+		print("Build changed to: ", current_build.build_name)
+	else:
+		push_error("Failed to change build: New build is null!")
 
 func get_player_hp() -> int:
 	return player_hp
