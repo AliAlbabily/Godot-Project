@@ -9,7 +9,7 @@ class BattleUI extends RefCounted:
 
 enum Turn { PLAYER, ENEMY }
 
-@onready var player = Game.player
+@onready var player = GameManager.get_player()
 var current_enemy : Enemy
 
 var enemy_hp: int = 0
