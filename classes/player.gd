@@ -33,7 +33,11 @@ func apply_build_stats() -> void:
 	
 	print("Build Updated: ", current_build.build_name, " HP: ", player_hp)
 	
-func change_build(new_build: PlayerBuild) -> void:
+func get_player_build() -> PlayerBuild:
+	return current_build
+	
+## Assigns a new build to the player's current build
+func set_player_build(new_build: PlayerBuild) -> void:
 	if new_build:
 		current_build = new_build
 		print("Build changed to: ", current_build.build_name)
@@ -49,8 +53,13 @@ func add_item(item: String) -> void:
 func take_damage(amount: int) -> void:
 	player_hp -= amount
 	
-func get_player_build() -> PlayerBuild:
-	return current_build
+# TODO: For testing purposes, delete later
+func print_player_stats():
+	print('\n')
+	print("hp: ", player_hp)
+	print("damage: ", player_damage)
+	print("defense: ", player_defense)
+	print("heal: ", player_heal)
 
 func _to_string() -> String:
 	return player_name

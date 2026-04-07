@@ -27,3 +27,12 @@ func _exit_tree() -> void:
 func _on_attack_button_pressed() -> void:
 	## TODO : In the future, add a paramater for type-of-attack inside player_attack()
 	TurnManager.player_attack()
+
+# TODO: For testing purposes, delete later
+func _on_add_build_pressed() -> void:
+	var tank_build = load("res://Resources/the_tank.tres")
+	GameManager.get_player().set_player_build(tank_build)
+
+# TODO: For testing purposes, delete later
+func _on_player_info_pressed() -> void:
+	GameManager.get_player().print_player_stats()
