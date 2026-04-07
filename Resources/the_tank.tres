@@ -9,5 +9,5 @@ build_hp = 1000
 build_damage = 20
 build_defense = 100
 build_heal = 20
-skills = Array[String](["negate_attack", "add_shield", "charge_up"])
+skills = Array[String](["negate_attack", "add_shield", "shield_attack"])
 metadata/_custom_type_script = "uid://bp2r77dcis2jt"

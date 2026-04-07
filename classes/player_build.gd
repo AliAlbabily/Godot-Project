@@ -18,7 +18,7 @@ func add_skill(skill: String) -> void:
 		skills.append(skill)
 
 ## This function will act as a "Skill Library"
-## It checks if the build has a specific skill and call it
+## It checks if the build has a specific skill and calls it
 func use_skill(skill_name: String):
 	if skill_name == "fireball":
 		_fireball()
