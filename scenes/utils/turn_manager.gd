@@ -49,12 +49,6 @@ func setup_battle(enemy_data: Enemy, ui: BattleUI) -> void:
 	# 4. Start
 	start_turn()
 
-
-func update_ui():
-	player_label.text = "Player HP: %d" % player.get_player_hp()
-	enemy_label.text = "Enemy HP: %d" % enemy_hp
-
-
 func start_turn():
 	if battle_over:
 		return
@@ -70,20 +64,21 @@ func start_turn():
 
 # -------- PLAYER --------
 
-func player_attack():
+func player_turn(player_action : String):
 	if current_turn != Turn.PLAYER:
 		return
 	
-	#################################
-	# TODO: change the random attack to a specific one
-	var dmg = randi_range(4, 8)
+	match player_action:
+		"normal-attack":
+			# TODO: change the random attack to a specific one
+			var dmg = randi_range(4, 8)
+			enemy_hp -= dmg
+			info_label.text = "You hit for %d!" % dmg
+		"defend":
+			return
 	
-	#################################
-	enemy_hp -= dmg
-	info_label.text = "You hit for %d!" % dmg
-	update_ui()
-	check_battle()
-	end_turn()
+	print("point reached")
+	switch_turn()
 
 # -------- ENEMY --------
 
@@ -121,11 +116,18 @@ func enemy_turn():
 	# Move to next turn
 	enemy_turn_index += 1
 	
+	switch_turn()
+
+# -------- FLOW --------
+
+func switch_turn():
 	update_ui()
 	check_battle()
 	end_turn()
 
-# -------- FLOW --------
+func update_ui():
+	player_label.text = "Player HP: %d" % player.get_player_hp()
+	enemy_label.text = "Enemy HP: %d" % enemy_hp
 
 func end_turn():
 	if battle_over:

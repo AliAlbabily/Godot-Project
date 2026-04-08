@@ -25,8 +25,7 @@ func _exit_tree() -> void:
 	print("level 2 - battle phase scene freed")
 	
 func _on_attack_button_pressed() -> void:
-	## TODO : In the future, add a paramater for type-of-attack inside player_attack()
-	TurnManager.player_attack()
+	TurnManager.player_turn("normal-attack")
 
 # TODO: For testing purposes, delete later
 func _on_add_build_pressed() -> void:
