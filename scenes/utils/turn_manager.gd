@@ -71,7 +71,7 @@ func player_turn(player_action : String):
 	match player_action:
 		"normal-attack":
 			# TODO: change the random attack to a specific one
-			var dmg = randi_range(4, 8)
+			var dmg = player.player_damage
 			enemy_hp -= dmg
 			info_label.text = "You hit for %d!" % dmg
 		"defend":
