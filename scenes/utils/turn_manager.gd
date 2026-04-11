@@ -100,7 +100,7 @@ func enemy_turn():
 		return
 		
 	match enemy_action.type:
-		EnemyAction.ActionType.ATTACK:
+		CharacterAction.ActionType.ATTACK:
 			player.take_damage(enemy_action.damage)
 			info_label.text = "%s hits for %d!" % [current_enemy.enemy_name, enemy_action.damage]
 			
@@ -117,7 +117,7 @@ func enemy_turn():
 				#else:
 					#print("Player took some dmg!")
 		
-		EnemyAction.ActionType.DEFEND:
+		CharacterAction.ActionType.DEFEND:
 			info_label.text = "%s defends for %d!" % [current_enemy.enemy_name, enemy_action.defense]
 		
 		#EnemyAction.ActionType.HEAL:

@@ -8,14 +8,14 @@ class_name Enemy
 @export_group("Combat Cycle")
 ## The sequential list of actions the enemy will take. 
 ## Once it reaches the end, it will loop back to the beginning.
-@export var action_cycle: Array[EnemyAction] = []
+@export var action_cycle: Array[CharacterAction] = []
 
 func _to_string() -> String:
 	return enemy_name
 
 # Helper function to easily get the correct action based on the turn number
 ## returns an enemy action
-func get_action(turn_index: int) -> EnemyAction:
+func get_action(turn_index: int) -> CharacterAction:
 	if action_cycle.is_empty():
 		push_error("EnemyStats: action_cycle is empty for " + enemy_name)
 		return null

@@ -1,5 +1,5 @@
 extends Resource
-class_name EnemyAction
+class_name CharacterAction
 
 # the types of actions and status effects based on 5 archetypes
 enum ActionType { ATTACK, DEFEND, HEAL, BUFF, DEBUFF, MULTI_ATTACK }
