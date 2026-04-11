@@ -180,10 +180,10 @@ scale = Vector2(97.7477, 196.507)
 metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 1085.0
-offset_top = 414.0
-offset_right = 1230.0
-offset_bottom = 596.0
+offset_left = 1041.0
+offset_top = 413.0
+offset_right = 1186.0
+offset_bottom = 665.0
 alignment = 1
 
 [node name="PlayerLabel" type="Label" parent="VBoxContainer"]
@@ -214,6 +214,10 @@ text = "Player Info"
 layout_mode = 2
 text = "Defend"
 
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Heal"
+
 [connection signal="mouse_entered" from="PlayerActions/Attack" to="PlayerActions" method="_on_attack_mouse_entered"]
 [connection signal="mouse_exited" from="PlayerActions/Attack" to="PlayerActions" method="_on_attack_mouse_exited"]
 [connection signal="mouse_entered" from="PlayerActions/Defence" to="PlayerActions" method="_on_defence_mouse_entered"]
@@ -222,3 +226,4 @@ text = "Defend"
 [connection signal="pressed" from="VBoxContainer/AddBuild" to="." method="_on_add_build_pressed"]
 [connection signal="pressed" from="VBoxContainer/PlayerInfo" to="." method="_on_player_info_pressed"]
 [connection signal="pressed" from="VBoxContainer/Defend" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

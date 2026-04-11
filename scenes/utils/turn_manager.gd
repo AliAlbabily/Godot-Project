@@ -80,7 +80,11 @@ func player_turn(player_action : String):
 			info_label.text = "Player is defending"
 			update_selected_player_action("player_defending")
 		"heal":
-			pass
+			var healing_points = player.player_heal
+			var new_player_hp = player.get_player_hp() + healing_points
+			player.set_player_hp(new_player_hp)
+			info_label.text = "Player healed by %d points" % healing_points
+			update_selected_player_action("player_healing")
 	
 	switch_turn()
 

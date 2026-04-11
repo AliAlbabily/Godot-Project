@@ -3,7 +3,7 @@ class_name Player
 var player_name: String = "Player 1"
 
 # Base Stats
-var player_hp: int = 50 # max player hp
+var player_hp: int = 50 # default player hp
 var player_damage: int = 0
 var player_defense: int = 0
 var player_heal: int = 0
@@ -46,6 +46,9 @@ func set_player_build(new_build: PlayerBuild) -> void:
 
 func get_player_hp() -> int:
 	return player_hp
+	
+func set_player_hp(value: int) -> void:
+	player_hp = max(0, value) # prevent negative values
 
 func add_item(item: String) -> void:
 	equipment.append(item)

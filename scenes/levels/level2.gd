@@ -39,3 +39,7 @@ func _on_player_info_pressed() -> void:
 # TODO: For testing purposes, delete later
 func _on_defend_pressed() -> void:
 	TurnManager.player_turn("defend")
+
+# TODO: For testing purposes, delete later
+func _on_button_pressed() -> void:
+	TurnManager.player_turn("heal")
