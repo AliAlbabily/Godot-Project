@@ -6,8 +6,8 @@
 script = ExtResource("1_u6rho")
 build_name = "Shield Master"
 build_hp = 1000
-build_damage = 20
-build_defense = 100
-build_heal = 20
+build_damage = 10
+build_defense = 10
+build_heal = 10
 skills = Array[String](["negate_attack", "add_shield", "shield_attack"])
 metadata/_custom_type_script = "uid://bp2r77dcis2jt"
