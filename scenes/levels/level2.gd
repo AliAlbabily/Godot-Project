@@ -35,3 +35,7 @@ func _on_add_build_pressed() -> void:
 # TODO: For testing purposes, delete later
 func _on_player_info_pressed() -> void:
 	GameManager.get_player().print_player_stats()
+
+# TODO: For testing purposes, delete later
+func _on_defend_pressed() -> void:
+	TurnManager.player_turn("defend")

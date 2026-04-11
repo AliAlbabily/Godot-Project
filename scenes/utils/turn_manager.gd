@@ -17,6 +17,8 @@ var enemy_hp: int = 0
 var current_turn : Turn = Turn.PLAYER
 var battle_over := false
 var enemy_turn_index: int = 0
+# TODO: Instead of String use something else
+#var current_player_action: String = ""
 
 var player_label: Label
 var enemy_label: Label
@@ -36,6 +38,8 @@ func setup_battle(enemy_data: Enemy, ui: BattleUI) -> void:
 	info_label.text = "Battle Started!"
 	battle_over = false
 	current_turn = Turn.PLAYER
+	# TODO: Instead of String use something else
+	#current_player_action = ""
 	
 	# 2. Reset Stats
 	enemy_hp = enemy_data.max_health
@@ -74,9 +78,11 @@ func player_turn(player_action : String):
 			enemy_hp -= dmg
 			info_label.text = "You hit for %d!" % dmg
 		"defend":
-			return
+			print("player is defending")
+			#current_player_action = "player_defending"
+			info_label.text = "Player is defending"
 		"heal":
-			return
+			pass
 	
 	switch_turn()
 
@@ -97,6 +103,19 @@ func enemy_turn():
 		EnemyAction.ActionType.ATTACK:
 			player.take_damage(enemy_action.damage)
 			info_label.text = "%s hits for %d!" % [current_enemy.enemy_name, enemy_action.damage]
+			
+			# TODO: use this code later
+			#var defence_points = player.player_defense
+			#if (current_enemy.get_action(enemy_turn_index).type == EnemyAction.ActionType.ATTACK):
+				#var enemy_dmg_points = current_enemy.get_action(enemy_turn_index).damage
+				#print('\n')
+				#print("Enemy dmg points:", enemy_dmg_points)
+				#print("Player def points:", defence_points)
+			#
+				#if (defence_points >= enemy_dmg_points):
+					#print("No dmg was taken..")
+				#else:
+					#print("Player took some dmg!")
 		
 		EnemyAction.ActionType.DEFEND:
 			info_label.text = "%s defends for %d!" % [current_enemy.enemy_name, enemy_action.defense]
