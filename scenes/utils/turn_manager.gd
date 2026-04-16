@@ -24,31 +24,30 @@ var enemy_label: Label
 var info_label: Label
 var attack_button: Button
 
-func setup_battle(enemy_data: Enemy, ui: BattleUI) -> void:
+func setup_battle(new_enemy: Enemy, ui: BattleUI) -> void:
 	# Assign variables
 	info_label = ui.info_label
 	player_label = ui.player_label
 	enemy_label = ui.enemy_label
 	attack_button = ui.attack_button
 	
-	current_enemy = enemy_data
+	# Assign a new enemy
+	current_enemy = new_enemy
 	
 	# 1. Reset state variables
 	info_label.text = "Battle Started!"
 	battle_over = false
 	current_turn = Turn.PLAYER
-	update_selected_player_action("") # TODO: Check if sending an empty String is allowed
-	
-	# 2. Reset Stats
-	enemy_hp = enemy_data.max_health
+	update_selected_player_action("")
+	enemy_hp = new_enemy.max_health
 	enemy_turn_index = 0
 	
-	# 3. Refresh UI
-	print("Enemy " + enemy_data.enemy_name + " appears!")
+	# 2. Refresh UI
+	print("Enemy " + new_enemy.enemy_name + " appears!")
 	update_ui()
 	attack_button.disabled = false
 	
-	# 4. Start
+	# 3. Start
 	start_turn()
 
 func start_turn():
