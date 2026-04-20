@@ -65,10 +65,13 @@ func start_turn():
 
 # -------- PLAYER --------
 
-func player_turn(player_action : String):
+func player_turn(player_action : CharacterAction):
 	if current_turn != Turn.PLAYER:
 		return
 	
+	info_label.text = CombatLogic.execute_action(player_action, player, current_enemy)
+	
+	# TODO: this code will be replaced by CombatLogic.execute_action()
 	match player_action:
 		"normal-attack":
 			var dmg = player.player_damage
@@ -84,6 +87,7 @@ func player_turn(player_action : String):
 			player.set_player_hp(new_player_hp)
 			info_label.text = "Player healed by %d points" % healing_points
 			update_selected_player_action("player_healing")
+	# /////////////////////
 	
 	switch_turn()
 
@@ -93,13 +97,16 @@ func enemy_turn():
 	# simple delay "animation"
 	await get_tree().create_timer(1.5).timeout
 	
-	# enemy attacks logic
+	# gets the current enemy action
 	var enemy_action = current_enemy.get_action(enemy_turn_index)
 	
 	if enemy_action == null:
 		push_error("No more actions to take")
 		return
 		
+	info_label.text = CombatLogic.execute_action(enemy_action, current_enemy, player)
+	
+	# TODO: this code will be replaced by CombatLogic.execute_action()
 	match enemy_action.type:
 		CharacterAction.ActionType.ATTACK:
 
@@ -139,6 +146,7 @@ func enemy_turn():
 				#enemy_action.multi_hit_count,
 				#total_damage
 			#]
+	# /////////////////////
 
 	# Move to next turn
 	enemy_turn_index += 1

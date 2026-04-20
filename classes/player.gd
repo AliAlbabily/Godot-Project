@@ -1,6 +1,6 @@
 class_name Player
 
-var player_name: String = "Player 1"
+var player_name: String = "Player"
 
 # Base Stats
 var player_hp: int = 50 # default player hp
