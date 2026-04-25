@@ -3,8 +3,11 @@ class_name Enemy
 
 @export_group("Base Stats")
 @export var enemy_name: String = "Generic Enemy"
-@export var max_health: int = 100
-var enemy_hp: int = max_health
+@export var max_health: int = 100:
+	set(value):
+		max_health = value
+		enemy_hp = value
+var enemy_hp: int
 
 @export_group("Combat Cycle")
 ## The sequential list of actions the enemy will take. 
