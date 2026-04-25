@@ -44,7 +44,7 @@ func set_player_build(new_build: PlayerBuild) -> void:
 	else:
 		push_error("Failed to change build: New build is null!")
 
-func get_player_hp() -> int:
+func get_hp() -> int:
 	return player_hp
 	
 func set_player_hp(value: int) -> void:

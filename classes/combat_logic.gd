@@ -3,9 +3,17 @@ class_name CombatLogic
 static func execute_action(action: CharacterAction, attacker, defender) -> String:
 	var result_text = ""
 	
+	print(attacker, " is the Attacker & will use : ", action.action_name)
+	
 	match action.type:
 		CharacterAction.ActionType.ATTACK:
-			pass
+			
+			if (action.action_name == "Basic Attack"):
+				print(action.action_name, " was used")
+			else:
+				print("Another type of Attack was used")
+				
+			
 			#var final_dmg = action.damage
 			#if is_defending:
 				#final_dmg = max(0, action.damage - defender.player_defense)

@@ -29,7 +29,7 @@ metadata/_custom_type_script = "uid://0ydisrpwaklb"
 
 [sub_resource type="Resource" id="Resource_nogkt"]
 script = ExtResource("1_6s7id")
-action_name = "Basic Attack"
+action_name = "Heavy Attack"
 type = 0
 damage = 15
 defense = 0
