@@ -60,6 +60,12 @@ func take_damage(amount: int) -> void:
 func get_final_damage(action_damage_points: int) -> int:
 	return player_damage + action_damage_points
 	
+func increase_hp(action_healing_points: int) -> int:
+	var total_healing_points = player_heal + action_healing_points
+	var new_hp = player_hp + total_healing_points
+	set_hp(new_hp)
+	return total_healing_points
+	
 # TODO: For testing purposes, delete later
 func print_player_stats():
 	print('\n')

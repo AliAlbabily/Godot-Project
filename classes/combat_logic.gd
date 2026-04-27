@@ -17,9 +17,9 @@ static func execute_action(action: CharacterAction, attacker, defender) -> Strin
 			defender.take_damage(final_dmg)
 			result_text = "%s deals %d damage!" % [attacker, final_dmg]
 			
-		#CharacterAction.ActionType.HEAL:
-			#attacker.set_player_hp(attacker.get_player_hp() + action.heal)
-			#result_text = "%s heals for %d!" % [attacker, action.heal]
+		CharacterAction.ActionType.HEAL:
+			var healing_points = attacker.increase_hp(action.heal)
+			result_text = "%s heals for %d!" % [attacker, healing_points]
 			
 		# Add other logic (MULTI_ATTACK, BUFFS) here
 			

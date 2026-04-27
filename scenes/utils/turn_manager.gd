@@ -70,20 +70,9 @@ func player_turn(player_action : CharacterAction):
 	
 	# TODO: this code will be replaced by CombatLogic.execute_action()
 	#match player_action:
-		#"normal-attack":
-			#var dmg = player.player_damage
-			#enemy_hp -= dmg
-			#info_label.text = "You hit for %d!" % dmg
-			#update_selected_player_action("player_normal_attacks")
 		#"defend":
 			#info_label.text = "Player is defending"
 			#update_selected_player_action("player_defending")
-		#"heal":
-			#var healing_points = player.player_heal
-			#var new_player_hp = player.get_hp() + healing_points
-			#player.set_player_hp(new_player_hp)
-			#info_label.text = "Player healed by %d points" % healing_points
-			#update_selected_player_action("player_healing")
 	# /////////////////////
 	
 	switch_turn()
@@ -108,23 +97,16 @@ func enemy_turn():
 		#CharacterAction.ActionType.ATTACK:
 #
 			#if (selected_player_action == "player_defending"):
-				#print("player is defending")
 				#var player_defence_points = player.player_defense
 				#var enemy_dmg_points = current_enemy.get_action(enemy_turn_index).damage
-				#print('\n')
-				#print("Enemy dmg points:", enemy_dmg_points)
-				#print("Player def points:", player_defence_points)
 			#
 				#if (player_defence_points >= enemy_dmg_points):
-					#print("No dmg was taken..")
 					#info_label.text = "Player received 0 dmg"
 				#else:
-					#print("Player with shield took some dmg!")
 					#var remaining_enemy_dmg_points = enemy_dmg_points - player_defence_points
 					#player.take_damage(remaining_enemy_dmg_points)
 					#info_label.text = "%s hits for %d!" % [current_enemy.enemy_name, enemy_action.damage]
 			#else:
-				#print("The enemy makes a direct attack!")
 				#player.take_damage(enemy_action.damage)
 				#info_label.text = "%s hits for %d!" % [current_enemy.enemy_name, enemy_action.damage]
 			#
