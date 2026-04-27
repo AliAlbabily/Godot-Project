@@ -6,7 +6,7 @@
 script = ExtResource("1_7m7g1")
 action_name = "Basic Attack"
 type = 0
-damage = 0
+damage = 10
 defense = 0
 heal = 0
 multi_hit_count = 1

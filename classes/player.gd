@@ -47,14 +47,18 @@ func set_player_build(new_build: PlayerBuild) -> void:
 func get_hp() -> int:
 	return player_hp
 	
-func set_player_hp(value: int) -> void:
+func set_hp(value: int) -> void:
 	player_hp = max(0, value) # prevent negative values
 
 func add_item(item: String) -> void:
 	equipment.append(item)
 	
 func take_damage(amount: int) -> void:
-	player_hp -= amount
+	var remaining_player_hp = player_hp - amount
+	set_hp(remaining_player_hp)
+
+func get_final_damage(action_damage_points: int) -> int:
+	return player_damage + action_damage_points
 	
 # TODO: For testing purposes, delete later
 func print_player_stats():

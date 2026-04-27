@@ -7,19 +7,15 @@ static func execute_action(action: CharacterAction, attacker, defender) -> Strin
 	
 	match action.type:
 		CharacterAction.ActionType.ATTACK:
-			
+			# TODO: For testing purposes, delete later
 			if (action.action_name == "Basic Attack"):
 				print(action.action_name, " was used")
 			else:
 				print("Another type of Attack was used")
-				
-			
-			#var final_dmg = action.damage
-			#if is_defending:
-				#final_dmg = max(0, action.damage - defender.player_defense)
-			#
-			#defender.take_damage(final_dmg)
-			#result_text = "%s deals %d damage!" % [attacker, final_dmg]
+			# ///////
+			var final_dmg = attacker.get_final_damage(action.damage)
+			defender.take_damage(final_dmg)
+			result_text = "%s deals %d damage!" % [attacker, final_dmg]
 			
 		#CharacterAction.ActionType.HEAL:
 			#attacker.set_player_hp(attacker.get_player_hp() + action.heal)

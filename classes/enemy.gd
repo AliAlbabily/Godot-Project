@@ -7,7 +7,7 @@ class_name Enemy
 	set(value):
 		max_health = value
 		enemy_hp = value
-var enemy_hp: int
+var enemy_hp: int = 0
 
 @export_group("Combat Cycle")
 ## The sequential list of actions the enemy will take. 
@@ -33,7 +33,11 @@ func set_hp(value: int) -> void:
 	enemy_hp = max(0, value) # prevent negative values
 	
 func take_damage(amount: int) -> void:
-	enemy_hp -= amount
+	var remaining_enemy_hp = enemy_hp - amount
+	set_hp(remaining_enemy_hp)
+	
+func get_final_damage(action_damage_points: int) -> int:
+	return action_damage_points
 	
 func _to_string() -> String:
 	return enemy_name
