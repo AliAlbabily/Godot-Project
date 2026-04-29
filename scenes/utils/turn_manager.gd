@@ -15,7 +15,7 @@ var current_enemy : Enemy
 var current_turn : Turn = Turn.PLAYER
 var battle_over := false
 var enemy_turn_index: int = 0
-var selected_player_action: String = ""
+var previous_character_action: CharacterAction = null
 
 var player_label: Label
 var enemy_label: Label
@@ -36,7 +36,7 @@ func setup_battle(new_enemy: Enemy, ui: BattleUI) -> void:
 	info_label.text = "Battle Started!"
 	battle_over = false
 	current_turn = Turn.PLAYER
-	update_selected_player_action("")
+	update_previous_character_action(null)
 	enemy_turn_index = 0
 	
 	# 2. Refresh UI
@@ -66,14 +66,8 @@ func player_turn(player_action : CharacterAction):
 	if current_turn != Turn.PLAYER:
 		return
 	
-	info_label.text = CombatLogic.execute_action(player_action, player, current_enemy)
-	
-	# TODO: this code will be replaced by CombatLogic.execute_action()
-	#match player_action:
-		#"defend":
-			#info_label.text = "Player is defending"
-			#update_selected_player_action("player_defending")
-	# /////////////////////
+	info_label.text = CombatLogic.execute_action(player_action, previous_character_action, player, current_enemy)
+	update_previous_character_action(player_action) # should always execute after CombatLogic.execute_action()
 	
 	switch_turn()
 
@@ -90,32 +84,9 @@ func enemy_turn():
 		push_error("No more actions to take")
 		return
 		
-	info_label.text = CombatLogic.execute_action(enemy_action, current_enemy, player)
+	info_label.text = CombatLogic.execute_action(enemy_action, previous_character_action, current_enemy, player)
+	update_previous_character_action(enemy_action) # should always execute after CombatLogic.execute_action()
 	
-	# TODO: this code will be replaced by CombatLogic.execute_action()
-	#match enemy_action.type:
-		#CharacterAction.ActionType.ATTACK:
-#
-			#if (selected_player_action == "player_defending"):
-				#var player_defence_points = player.player_defense
-				#var enemy_dmg_points = current_enemy.get_action(enemy_turn_index).damage
-			#
-				#if (player_defence_points >= enemy_dmg_points):
-					#info_label.text = "Player received 0 dmg"
-				#else:
-					#var remaining_enemy_dmg_points = enemy_dmg_points - player_defence_points
-					#player.take_damage(remaining_enemy_dmg_points)
-					#info_label.text = "%s hits for %d!" % [current_enemy.enemy_name, enemy_action.damage]
-			#else:
-				#player.take_damage(enemy_action.damage)
-				#info_label.text = "%s hits for %d!" % [current_enemy.enemy_name, enemy_action.damage]
-			#
-		#
-		#CharacterAction.ActionType.DEFEND:
-			#info_label.text = "%s defends for %d!" % [current_enemy.enemy_name, enemy_action.defense]
-
-	# /////////////////////
-
 	# Move to next turn
 	enemy_turn_index += 1
 	
@@ -150,5 +121,5 @@ func check_battle():
 		battle_over = true
 		attack_button.disabled = true
 		
-func update_selected_player_action(selected_action : String):
-	selected_player_action = selected_action
+func update_previous_character_action(action : CharacterAction):
+	previous_character_action = action

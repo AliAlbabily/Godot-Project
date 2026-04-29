@@ -1,6 +1,6 @@
 class_name CombatLogic
 
-static func execute_action(action: CharacterAction, attacker, defender) -> String:
+static func execute_action(action: CharacterAction, previous_character_action: CharacterAction, attacker, defender) -> String:
 	var result_text = ""
 	
 	print(attacker, " is the Attacker & will use : ", action.action_name)
