@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=6 format=3 uid="uid://dg4fy06omcq6o"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=7 format=3 uid="uid://dg4fy06omcq6o"]
 
 [ext_resource type="Script" uid="uid://0ydisrpwaklb" path="res://classes/character_action.gd" id="1_6s7id"]
 [ext_resource type="Script" uid="uid://bg8yu4j40smwt" path="res://classes/enemy.gd" id="1_kakq7"]
@@ -39,9 +39,21 @@ status_type = 0
 status_amount = 0
 metadata/_custom_type_script = "uid://0ydisrpwaklb"
 
+[sub_resource type="Resource" id="Resource_202jb"]
+script = ExtResource("1_6s7id")
+action_name = "Defend"
+type = 1
+damage = 0
+defense = 0
+heal = 0
+multi_hit_count = 1
+status_type = 0
+status_amount = 0
+metadata/_custom_type_script = "uid://0ydisrpwaklb"
+
 [resource]
 script = ExtResource("1_kakq7")
 enemy_name = "Warrior"
 max_health = 50
-action_cycle = Array[ExtResource("1_6s7id")]([SubResource("Resource_6s7id"), SubResource("Resource_q5yxu"), SubResource("Resource_nogkt")])
+action_cycle = Array[ExtResource("1_6s7id")]([SubResource("Resource_6s7id"), SubResource("Resource_q5yxu"), SubResource("Resource_nogkt"), SubResource("Resource_202jb")])
 metadata/_custom_type_script = "uid://bg8yu4j40smwt"

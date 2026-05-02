@@ -39,5 +39,8 @@ func take_damage(amount: int) -> void:
 func get_final_damage(action_damage_points: int) -> int:
 	return action_damage_points
 	
+func get_final_defense(action_defense_points: int) -> int:
+	return action_defense_points
+	
 func _to_string() -> String:
 	return enemy_name

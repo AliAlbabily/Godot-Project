@@ -66,6 +66,9 @@ func increase_hp(action_healing_points: int) -> int:
 	set_hp(new_hp)
 	return total_healing_points
 	
+func get_final_defense(action_defense_points: int) -> int:
+	return player_defense + action_defense_points
+	
 # TODO: For testing purposes, delete later
 func print_player_stats():
 	print('\n')
