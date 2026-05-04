@@ -19,6 +19,12 @@ static func execute_action(action: CharacterAction, previous_character_action: C
 				print("attacker_damage_points: ", attacker_damage_points)
 				print("")
 				
+				if (defender_defence_points >= attacker_damage_points):
+					result_text = "%s received 0 dmg" % [defender]
+				else:
+					var remaining_attacker_dmg_points = attacker_damage_points - defender_defence_points
+					defender.take_damage(remaining_attacker_dmg_points)
+					result_text = "%s hits for %d!" % [attacker, attacker_damage_points]
 				
 			else:
 				# TODO: For testing purposes, delete later
@@ -39,30 +45,11 @@ static func execute_action(action: CharacterAction, previous_character_action: C
 			
 		# TODO: needs testing
 		CharacterAction.ActionType.DEFEND:
-			result_text = "%s defends for %d!" % [attacker, action.defense]
+			var defense_points = attacker.get_final_defense(action.defense)
+			result_text = "%s defends for %d!" % [attacker, defense_points]
 			
 		# Add other logic (MULTI_ATTACK, BUFFS) here
 			
 	print("----------------------------------------------------")
 	
 	return result_text
-	
-	
-	# inside enemy_turn()
-	
-			#if (latest_player_action == "player_defending"):
-				#var player_defence_points = player.player_defense
-				#var enemy_dmg_points = current_enemy.get_action(enemy_turn_index).damage
-			#
-				#if (player_defence_points >= enemy_dmg_points):
-					#info_label.text = "Player received 0 dmg"
-				#else:
-					#var remaining_enemy_dmg_points = enemy_dmg_points - player_defence_points
-					#player.take_damage(remaining_enemy_dmg_points)
-					#info_label.text = "%s hits for %d!" % [current_enemy.enemy_name, enemy_action.damage]
-			#else:
-				#player.take_damage(enemy_action.damage)
-				#info_label.text = "%s hits for %d!" % [current_enemy.enemy_name, enemy_action.damage]
-			#
-
-	# /////////////////////

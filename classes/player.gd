@@ -71,11 +71,11 @@ func get_final_defense(action_defense_points: int) -> int:
 	
 # TODO: For testing purposes, delete later
 func print_player_stats():
-	print('\n')
 	print("hp: ", player_hp)
 	print("damage: ", player_damage)
 	print("defense: ", player_defense)
 	print("heal: ", player_heal)
+	print("")
 
 func _to_string() -> String:
 	return player_name
