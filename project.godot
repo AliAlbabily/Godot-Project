@@ -21,12 +21,12 @@ SceneTransition="*res://scenes/transitions/scene_transition.tscn"
 LevelUtils="*res://scenes/utils/level_utils.gd"
 TurnManager="*res://scenes/utils/turn_manager.gd"
 GameManager="*res://scenes/utils/game_manager.gd"
+SaveManager="*res://scenes/utils/save_manager.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [file_customization]

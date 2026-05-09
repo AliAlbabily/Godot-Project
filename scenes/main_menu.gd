@@ -4,6 +4,7 @@ extends Control
 @onready var toggle_music_track: Button = $ToggleMusicTrack
 @onready var slideshow: TextureRect = $SlideShow
 @onready var fade_overlay: ColorRect = $SlideShow/FadeOverlay
+@onready var continue_button: Button = $VBoxContainer/continue
 
 var music_on_icon: Texture2D = preload("res://art/icons/volume_on.png")
 var music_off_icon: Texture2D = preload("res://art/icons/volume_off.png")
@@ -23,8 +24,17 @@ var fade_time: float = 1.5
 var display_time: float = 3.0
 
 func _ready() -> void:
+	# handle music button
 	toggle_music_track.icon = music_on_icon
 	main_menu_music.play()
+	
+	# handle "continue" button
+	# TODO: make sure that save logic works
+	SaveManager.test_save_file_exists()
+	
+	print(SaveManager.save_file_exists())
+	continue_button.disabled = SaveManager.save_file_exists() # only enable "continue" button if a save file exists
+	#//////////////
 	
 	# Start the slideshow asynchronously
 	run_slideshow()
