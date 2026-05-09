@@ -23,29 +23,14 @@ var fade_time: float = 1.5
 var display_time: float = 3.0
 
 func _ready() -> void:
-	print("Main_Menu scene ready")
-	queue_redraw()
-	resized.connect(func(): queue_redraw())  # redraw when the node is resized
 	toggle_music_track.icon = music_on_icon
 	main_menu_music.play()
 	
-	# Start slideshow coroutine
-	_start_slideshow()
+	# Start the slideshow asynchronously
+	run_slideshow()
 	
-	# Start the animation
-	$AnimatedSprite2D.play()
-	
-# Slideshow logic
-func _start_slideshow() -> void:
-	# Launch async slideshow loop
-	start_slideshow()
-	
-@rpc("call_local") # optional, if networked
-func start_slideshow() -> void:
-	# Run slideshow asynchronously
-	_run_slideshow()
-	
-func _run_slideshow() -> void:
+# slideshow logic
+func run_slideshow() -> void:
 	await get_tree().create_timer(3.0).timeout  # Initial delay before first image
 
 	while true:
@@ -62,7 +47,6 @@ func _run_slideshow() -> void:
 		# At end → fade to black and hold for 3 seconds
 		await get_tree().create_timer(3.0).timeout
 
-
 # Fade helper
 func _fade_overlay(to_alpha: float, duration: float) -> void:
 	var tween = get_tree().create_tween().bind_node(self)
@@ -74,9 +58,6 @@ func _exit_tree() -> void:
 
 func _draw() -> void:
 	draw_rect(Rect2(Vector2.ZERO, size), Color.BLACK, true)
-
-func _process(delta):
-	pass
 
 func _on_start_pressed() -> void:
 	go_to_next_scene()
