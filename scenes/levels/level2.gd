@@ -24,8 +24,10 @@ func _ready() -> void:
 func _exit_tree() -> void:
 	print("level 2 - battle phase scene freed")
 	
+# TODO: For testing purposes, delete later
 func _on_attack_button_pressed() -> void:
-	TurnManager.player_turn("normal-attack")
+	var action = load("res://Resources/player_actions/basic_attack.tres")
+	TurnManager.player_turn(action)
 
 # TODO: For testing purposes, delete later
 func _on_add_build_pressed() -> void:
@@ -38,8 +40,10 @@ func _on_player_info_pressed() -> void:
 
 # TODO: For testing purposes, delete later
 func _on_defend_pressed() -> void:
-	TurnManager.player_turn("defend")
+	var action = load("res://Resources/player_actions/defend.tres")
+	TurnManager.player_turn(action)
 
 # TODO: For testing purposes, delete later
 func _on_button_pressed() -> void:
-	TurnManager.player_turn("heal")
+	var action = load("res://Resources/player_actions/heal.tres")
+	TurnManager.player_turn(action)

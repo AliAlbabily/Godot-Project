@@ -1,6 +1,6 @@
 class_name Player
 
-var player_name: String = "Player 1"
+var player_name: String = "Player"
 
 # Base Stats
 var player_hp: int = 50 # default player hp
@@ -44,25 +44,38 @@ func set_player_build(new_build: PlayerBuild) -> void:
 	else:
 		push_error("Failed to change build: New build is null!")
 
-func get_player_hp() -> int:
+func get_hp() -> int:
 	return player_hp
 	
-func set_player_hp(value: int) -> void:
+func set_hp(value: int) -> void:
 	player_hp = max(0, value) # prevent negative values
 
 func add_item(item: String) -> void:
 	equipment.append(item)
 	
 func take_damage(amount: int) -> void:
-	player_hp -= amount
+	var remaining_player_hp = player_hp - amount
+	set_hp(remaining_player_hp)
+
+func get_final_damage(action_damage_points: int) -> int:
+	return player_damage + action_damage_points
+	
+func increase_hp(action_healing_points: int) -> int:
+	var total_healing_points = player_heal + action_healing_points
+	var new_hp = player_hp + total_healing_points
+	set_hp(new_hp)
+	return total_healing_points
+	
+func get_final_defense(action_defense_points: int) -> int:
+	return player_defense + action_defense_points
 	
 # TODO: For testing purposes, delete later
 func print_player_stats():
-	print('\n')
 	print("hp: ", player_hp)
 	print("damage: ", player_damage)
 	print("defense: ", player_defense)
 	print("heal: ", player_heal)
+	print("")
 
 func _to_string() -> String:
 	return player_name
