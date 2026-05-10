@@ -1,24 +1,22 @@
 extends Node
 
+const SAVE_PATH := "user://variable.save"
+
 # testing function
 func test_save_file_exists() -> void:
-	var path = "user://variable.save"
-	
-	if FileAccess.file_exists(path):
-		print("Save file EXISTS at: ", path)
+	if FileAccess.file_exists(SAVE_PATH):
+		print("Save file EXISTS at: ", SAVE_PATH)
 	else:
-		print("No save file found at: ", path)
+		print("No save file found at: ", SAVE_PATH)
 
 # TODO: change the type of data stored in the future
 # testing function
 func read_save_file() -> int:
-	var path = "user://variable.save"
-	
-	if not FileAccess.file_exists(path):
-		print("No save file found at: ", path)
+	if not FileAccess.file_exists(SAVE_PATH):
+		print("No save file found at: ", SAVE_PATH)
 		return 0
 	
-	var file = FileAccess.open(path, FileAccess.READ)
+	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if file == null:
 		print("Failed to open save file.")
 		return 0
@@ -31,4 +29,4 @@ func read_save_file() -> int:
 
 func save_file_exists() -> bool:
 	# return false if a save file exists
-	return !FileAccess.file_exists("user://variable.save")
+	return !FileAccess.file_exists(SAVE_PATH)
