@@ -28,13 +28,10 @@ func _ready() -> void:
 	toggle_music_track.icon = music_on_icon
 	main_menu_music.play()
 	
-	# handle "continue" button
-	# TODO: make sure that save logic works
-	SaveManager.test_save_file_exists()
-	
-	print(SaveManager.save_file_exists())
-	continue_button.disabled = SaveManager.save_file_exists() # only enable "continue" button if a save file exists
-	#//////////////
+	# handle save logic
+	SaveManager.testing_func_check_save_file()
+	continue_button.disabled = !SaveManager.check_save_file() # enable "continue" button if the save file exists
+	SaveManager.load_data()
 	
 	# Start the slideshow asynchronously
 	run_slideshow()
@@ -99,3 +96,11 @@ func play_fade_out_animation():
 func go_to_next_scene():
 	await play_fade_out_animation()
 	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+
+# TODO: needs testing
+func _input(event: InputEvent) -> void:
+	# Press 'Tab key' on the main menu to wipe the save (Debug only!)
+	if OS.is_debug_build() and event.is_action_pressed("ui_focus_next"):
+		DirAccess.remove_absolute("user://variable.save")
+		get_tree().reload_current_scene() 
+		print("Save wiped for testing!")
