@@ -10,6 +10,10 @@ extends Node
 func _ready() -> void:
 	print("level 2 - battle phase scene ready")
 	
+	# Update the current level path in SaveManager
+	SaveManager.current_data["level_path"] = "res://scenes/levels/level2.tscn"
+	SaveManager.create_new_save()
+	
 	# Use TurnManager to access the class definition
 	var battle_ui = TurnManager.BattleUI.new()
 	

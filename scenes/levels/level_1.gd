@@ -7,6 +7,11 @@ var dialogue_activated = false
 @onready var characterInNormalSize = get_node("MysteriousMan")
 @onready var characterZoomedIn = get_node("MysteriousManZoomedIn")
 
+func _ready() -> void:
+	# Update the current level path in SaveManager
+	SaveManager.current_data["level_path"] = "res://scenes/levels/level1.tscn"
+	SaveManager.create_new_save()
+
 func _on_portal_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		SceneTransition.change_scene('res://scenes/levels/level2.tscn')

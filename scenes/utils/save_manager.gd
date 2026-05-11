@@ -4,11 +4,14 @@ const SAVE_PATH := "user://variable.save"
 
 # Default data structure for a new game
 var default_data = {
-	"level": 1,
-	"health": 100,
+	"level_path": "res://scenes/levels/level1.tscn",
 	"score": 0,
 	"unlocked_items": []
 }
+
+# This holds the data for the CURRENT game session
+# Start with a copy of the default_data immediately.
+var current_data: Dictionary = default_data.duplicate(true)
 
 # Testing function
 # Check if the save file exists
@@ -45,24 +48,28 @@ func check_save_file() -> bool:
 		return false
 
 
-# TODO: needs testing
 func create_new_save() -> void:
 	# Overwrite the existing file with default data
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
-		file.store_var(default_data)
+		file.store_var(current_data)
 		file.close()
 		print("New game file created/overwritten.")
 
 
-# TODO: needs testing
-func load_data() -> void:
+func prepare_new_game():
+	current_data = default_data.duplicate(true)
+
+
+func load_into_session() -> void:
 	var save_file_exists = check_save_file()
 	if save_file_exists:
 		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
-		default_data = file.get_var(default_data)
+		current_data = file.get_var()
 		print("Loaded!")
-		print("")
-		print(default_data)
+		print(current_data)
+		file.close()
 	else:
 		print("No data saved to be loaded..")
+		print("Preparing a new game")
+		prepare_new_game()

@@ -28,10 +28,9 @@ func _ready() -> void:
 	toggle_music_track.icon = music_on_icon
 	main_menu_music.play()
 	
-	# handle save logic
+	# check the save file & handle continue button
 	SaveManager.testing_func_check_save_file()
 	continue_button.disabled = !SaveManager.check_save_file() # enable "continue" button if the save file exists
-	SaveManager.load_data()
 	
 	# Start the slideshow asynchronously
 	run_slideshow()
@@ -67,10 +66,13 @@ func _draw() -> void:
 	draw_rect(Rect2(Vector2.ZERO, size), Color.BLACK, true)
 
 func _on_start_pressed() -> void:
+	SaveManager.prepare_new_game() # Set up fresh data in the Autoload
 	go_to_next_scene()
 
 func _on_continue_pressed() -> void:
 	print("continue")
+	SaveManager.load_into_session() # Load file into the Autoload
+	go_to_next_scene()
 
 func _on_about_pressed() -> void:
 	print("about")
@@ -95,7 +97,8 @@ func play_fade_out_animation():
 		
 func go_to_next_scene():
 	await play_fade_out_animation()
-	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+	var target_scene = SaveManager.current_data["level_path"]
+	get_tree().change_scene_to_file(target_scene)
 
 # TODO: needs testing
 func _input(event: InputEvent) -> void:
