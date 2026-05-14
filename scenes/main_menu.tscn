@@ -231,8 +231,26 @@ libraries = {
 }
 speed_scale = 0.5
 
+[node name="SaveWarningDialog" type="ConfirmationDialog" parent="."]
+title = "Reset Progress?"
+position = Vector2i(325, 307)
+size = Vector2i(630, 121)
+
+[node name="Label" type="Label" parent="SaveWarningDialog"]
+custom_minimum_size = Vector2(300, 50)
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 622.0
+offset_bottom = 72.0
+text = "Starting a new game will overwrite your current save. 
+Do you want to continue?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/new-game" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/about" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ToggleMusicTrack" to="." method="_on_toggle_music_track_pressed"]
+[connection signal="confirmed" from="SaveWarningDialog" to="." method="_on_save_warning_dialog_confirmed"]

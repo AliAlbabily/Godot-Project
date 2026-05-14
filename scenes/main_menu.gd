@@ -6,6 +6,8 @@ extends Control
 @onready var fade_overlay: ColorRect = $SlideShow/FadeOverlay
 @onready var continue_button: Button = $VBoxContainer/continue
 
+@onready var save_warning_dialog: ConfirmationDialog = $SaveWarningDialog
+
 var music_on_icon: Texture2D = preload("res://art/icons/volume_on.png")
 var music_off_icon: Texture2D = preload("res://art/icons/volume_off.png")
 
@@ -66,8 +68,12 @@ func _draw() -> void:
 	draw_rect(Rect2(Vector2.ZERO, size), Color.BLACK, true)
 
 func _on_start_pressed() -> void:
-	SaveManager.prepare_new_game() # Set up fresh data in the Autoload
-	go_to_next_scene()
+	if SaveManager.check_save_file():
+		# if a save exists, show the popup centered on screen
+		save_warning_dialog.popup_centered()
+	else:
+		# No save exists, safe to start immediately
+		confirm_new_game()
 
 func _on_continue_pressed() -> void:
 	print("continue")
@@ -107,3 +113,12 @@ func _input(event: InputEvent) -> void:
 		DirAccess.remove_absolute("user://variable.save")
 		get_tree().reload_current_scene() 
 		print("Save wiped for testing!")
+		
+# a shared function to handle the actual start "New Game" logic
+func confirm_new_game() -> void:
+	SaveManager.prepare_new_game() # Set up fresh data in the Autoload
+	go_to_next_scene()             # Transition to the level
+	
+# handle the "OK/Yes" click from the popup/ConfirmationDialog
+func _on_save_warning_dialog_confirmed() -> void:
+	confirm_new_game()
