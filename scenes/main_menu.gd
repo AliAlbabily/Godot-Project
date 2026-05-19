@@ -106,9 +106,9 @@ func go_to_next_scene():
 	var target_scene = SaveManager.current_data["level_path"]
 	get_tree().change_scene_to_file(target_scene)
 
-# TODO: needs testing
+# Testing function
+# Press 'Tab key' on the main menu to wipe the save (Debug only!)
 func _input(event: InputEvent) -> void:
-	# Press 'Tab key' on the main menu to wipe the save (Debug only!)
 	if OS.is_debug_build() and event.is_action_pressed("ui_focus_next"):
 		DirAccess.remove_absolute("user://variable.save")
 		get_tree().reload_current_scene() 

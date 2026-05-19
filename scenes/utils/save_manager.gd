@@ -13,31 +13,25 @@ var default_data = {
 # Start with a copy of the default_data immediately.
 var current_data: Dictionary = default_data.duplicate(true)
 
+
 # Testing function
-# Check if the save file exists
+# Checks for a save file and reads its contents if it exists
 func testing_func_check_save_file() -> void:
-	if FileAccess.file_exists(SAVE_PATH):
-		print("Save file EXISTS at: ", SAVE_PATH)
-	else:
-		print("No save file found at: ", SAVE_PATH)
-
-
-# Testing function
-func read_save_file() -> int:
 	if not FileAccess.file_exists(SAVE_PATH):
 		print("No save file found at: ", SAVE_PATH)
-		return 0
+		return
+		
+	print("Save file EXISTS at: ", SAVE_PATH)
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if file == null:
-		print("Failed to open save file.")
-		return 0
+		print("Failed to open save file at: ", SAVE_PATH)
+		return
 	
 	var saved_value = file.get_var()
-	file.close()
+	file.close() # Always good practice to close the file stream
 	
 	print("Saved value is: ", saved_value)
-	return saved_value
 
 
 # check if the save file exists on the given path
