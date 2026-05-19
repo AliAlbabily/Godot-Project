@@ -8,6 +8,9 @@ var dialogue_activated = false
 @onready var characterZoomedIn = get_node("MysteriousManZoomedIn")
 
 func _ready() -> void:
+	# test and check switching between scenes speed
+	SceneTransition.end_benchmark("Level 1")
+	
 	# Update the current level path in SaveManager
 	SaveManager.current_data["level_path"] = "res://scenes/levels/level1.tscn"
 	SaveManager.create_new_save()

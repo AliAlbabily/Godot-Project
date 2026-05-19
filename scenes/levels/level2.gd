@@ -8,7 +8,8 @@ extends Node
 @onready var attack_button: Button = $VBoxContainer/AttackButton
 
 func _ready() -> void:
-	print("level 2 - battle phase scene ready")
+	# test and check switching between scenes speed
+	SceneTransition.end_benchmark("Level 2")
 	
 	# Update the current level path in SaveManager
 	SaveManager.current_data["level_path"] = "res://scenes/levels/level2.tscn"

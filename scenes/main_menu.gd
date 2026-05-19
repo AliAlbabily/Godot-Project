@@ -104,6 +104,7 @@ func play_fade_out_animation():
 func go_to_next_scene():
 	await play_fade_out_animation()
 	var target_scene = SaveManager.current_data["level_path"]
+	SceneTransition.start_benchmark() # test speed
 	get_tree().change_scene_to_file(target_scene)
 
 # Testing function
