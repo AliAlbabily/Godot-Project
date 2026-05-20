@@ -21,13 +21,13 @@ func change_scene(target: String) -> void:
 	is_busy = false
 
 
-# Testing function
+## [b]Testing function:[/b][br]
 ## Call this right before changing the scene
 func start_benchmark() -> void:
 	_load_start_time = Time.get_ticks_msec()
 
 
-# Testing function
+## [b]Testing function:[/b][br]
 ## Call this inside the _ready() function of your new level
 func end_benchmark(scene_name: String) -> void:
 	var duration := Time.get_ticks_msec() - _load_start_time
